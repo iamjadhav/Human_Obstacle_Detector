@@ -1,6 +1,6 @@
 # Human_Obstacle_Detector
 
-Human Obstacle Detector using C++
+Human Obstacle Detector using Modern C++ Programming Language.
 
 # Contributors
 
@@ -28,6 +28,8 @@ We will plan the work in Sprints and switch between the roles of driver and navi
 - CMake Build System
 - Doxygen 
 
-# Videos
+# Links
 
-Proposal: https://youtu.be/2ptUw7MpsMc
+AIP Process           : https://docs.google.com/spreadsheets/d/1bapR4zMCzfcwQHhxAm6KktWsMINTTPEt/edit#gid=2052063551
+Sprint Planning Sheet : https://docs.google.com/document/d/1Xaz2rZ7OrmSh3bSE351XQz483VGetJkJdF37AjUF9Ro/edit
+Proposal              : https://youtu.be/2ptUw7MpsMc
