@@ -1,5 +1,5 @@
 /**
- * @file main.cpp
+ * @file data.hpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
  * @brief 
@@ -10,9 +10,9 @@
  * 
  */
 
-#include <iostream>
-#include "../include/Data.hpp"
+#pragma once
 
-int main() {
-    return 0;
-}
+#include<iostream>
+#include <opencv2/opencv.hpp>
+
+class Data {};
