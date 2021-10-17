@@ -12,7 +12,24 @@
 
 #pragma once
 
-#include<iostream>
+#include <string>
+#include <fstream>
 #include <opencv2/opencv.hpp>
 
-class Data {};
+/**
+ * @brief Data class includes methods to get the input data
+ *        and a method to put bounging boxes around the 
+ *        detected humans. 
+ */
+class Data {
+ public:
+Data();
+int getCamera();
+cv::Mat loadVideo(std::string filePath);
+int preProcessing(const cv::Mat &frame);
+~Data();
+ private:
+cv::Mat frame;
+cv::Mat frame_copy;
+cv::Mat resizedFrame;
+};

@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/build/app",
+  "command": "/usr/bin/c++   -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/include\" -isystem /usr/include/opencv  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/shell-app.dir/main.cpp.o -c \"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/app/main.cpp\"",
+  "file": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/app/main.cpp"
+},
+{
+  "directory": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/build/app",
+  "command": "/usr/bin/c++   -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/include\" -isystem /usr/include/opencv  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/shell-app.dir/Data.cpp.o -c \"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/app/Data.cpp\"",
+  "file": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/app/Data.cpp"
+},
+{
+  "directory": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/build/test",
+  "command": "/usr/bin/c++   -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/test/../vendor/googletest/googletest/include\" -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/include\" -isystem /usr/include/opencv -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/include\"  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/main.cpp.o -c \"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/test/main.cpp\"",
+  "file": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/test/main.cpp"
+},
+{
+  "directory": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/build/test",
+  "command": "/usr/bin/c++   -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/test/../vendor/googletest/googletest/include\" -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/include\" -isystem /usr/include/opencv -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/include\"  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/__/app/Data.cpp.o -c \"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/app/Data.cpp\"",
+  "file": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/app/Data.cpp"
+},
+{
+  "directory": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/build/test",
+  "command": "/usr/bin/c++   -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/test/../vendor/googletest/googletest/include\" -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/include\" -isystem /usr/include/opencv -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/include\"  -Wall -Wextra -Wpedantic -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/DataTest.cpp.o -c \"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/test/DataTest.cpp\"",
+  "file": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/test/DataTest.cpp"
+},
+{
+  "directory": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/build/vendor/googletest/googletest",
+  "command": "/usr/bin/c++   -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/include\" -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest\"  -Wall -Wextra -Wpedantic -g   -Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c \"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/src/gtest_main.cc\"",
+  "file": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/build/vendor/googletest/googletest",
+  "command": "/usr/bin/c++   -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/include\" -I\"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest\"  -Wall -Wextra -Wpedantic -g   -Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c \"/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/src/gtest-all.cc\"",
+  "file": "/home/aditya/Sem 2/808X/MidTerm/Human_Obstacle_Detector/vendor/googletest/googletest/src/gtest-all.cc"
+}
+]

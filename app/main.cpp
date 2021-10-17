@@ -2,7 +2,7 @@
  * @file main.cpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
- * @brief 
+ * @brief Stubs and tests for Data class
  * @version 0.1
  * @date 2021-10-15
  * 
@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include "../include/Data.hpp"
+#include <opencv2/opencv.hpp>
 
 int main() {
     return 0;
