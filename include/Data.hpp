@@ -23,13 +23,13 @@
  */
 class Data {
  public:
-Data();
-int getCamera();
-cv::Mat loadVideo(std::string filePath);
-int preProcessing(const cv::Mat &frame);
-~Data();
+  Data();
+  int getCamera();
+  cv::Mat loadVideo(std::string filePath);
+  int preProcessing(const cv::Mat &frame);
+  ~Data();
  private:
-cv::Mat frame;
-cv::Mat frame_copy;
-cv::Mat resizedFrame;
+  cv::Mat frame;
+  cv::Mat frame_copy;
+  cv::Mat resizedFrame;
 };
