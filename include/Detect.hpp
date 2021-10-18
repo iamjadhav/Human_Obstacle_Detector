@@ -20,7 +20,6 @@
 /**
  * @brief Detect class uses a pre-trained SVM model from openCV to detect
  *        humans in the input frames and return bounding box co-ordinates.
-
  */
 class Detect {
  public:

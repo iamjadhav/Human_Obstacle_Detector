@@ -30,11 +30,10 @@ Data::Data() {}
  * @return int 
  */
 int Data::getCamera(int mode) {
-    cv::VideoCapture cap(mode);
+  frame.release();
+  cv::VideoCapture cap(mode);
     if (cap.isOpened() == false) {
       std::cout << "Camera cannot be opened! " << std::endl;
-      std::cin.get();
-      return -1;
     } else {
         while (true) {
             cap >> frame;
@@ -48,6 +47,8 @@ int Data::getCamera(int mode) {
               break;
             }
         }
+      cap.release();
+      cv::destroyAllWindows();
     }
 }
 
@@ -57,11 +58,10 @@ int Data::getCamera(int mode) {
  * @return int 
  */
 int Data::loadVideo(std::string filePath) {
+  frame.release();
   cv::VideoCapture cap(filePath);
     if (cap.isOpened() == false) {
       std::cout << "Video File cannot be opened! " << std::endl;
-      std::cin.get();
-      return -1;
     } else {
         while (true) {
           cap >> frame;
@@ -75,6 +75,8 @@ int Data::loadVideo(std::string filePath) {
             break;
           }
         }
+      cap.release();
+      cv::destroyAllWindows();
     }
 }
 
@@ -87,8 +89,6 @@ cv::Mat Data::preProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
   int row, col;
   cv::resize(frame_copy, resizedFrame, cv::Size(frame_copy.cols*2, frame_copy.rows*2));
-  row = resizedFrame.rows;
-  col = resizedFrame.cols;
   return resizedFrame;
 }
 
