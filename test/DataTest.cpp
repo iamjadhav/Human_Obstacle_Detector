@@ -11,18 +11,27 @@
  */
 
 #include <gtest/gtest.h>
+#include <string>
 #include "../include/Data.hpp"
 #include <opencv2/opencv.hpp>
 
 
 TEST(Camera, Data_Input_Method) {
   Data camera;
-  EXPECT_EQ(camera.getCamera(), 0);
+  camera.getCamera(2);
+  EXPECT_EQ(camera.frame.empty(), 1);
 }
 
-TEST(Processing, If_Processed_Output) {
-  Data process;
-  cv::Mat frame;
-  frame = process.loadVideo("../Timeline.png");
-  EXPECT_EQ(process.preProcessing(frame), 100);
-}
+// TEST(Video, Data_Input_as_File) {
+//   Data video;
+//   std::string filename;
+//   EXPECT_EQ(video.loadVideo(filename), 0);
+// }
+
+// TEST(Processing, If_Processed_Output) {
+//   Data process;
+//   cv::Mat frame;
+//   frame = cv::imread("../Timeline.png");
+//   cv::Mat resized = process.preProcessing(frame);
+//   EXPECT_EQ(resized.rows, 200);
+// }

@@ -25,8 +25,8 @@ class Detect {
  public:
   Detect();
   cv::HOGDescriptor HOG;
-  std::vector<cv::Rect> detectHuman(const cv::Mat &input_frame);
-  int putBox(const cv::Mat &input_frame);
+  void detectHuman(cv::Mat &input_frame);
+  void putBox(cv::Mat &input_frame);
   ~Detect();
 
  private:

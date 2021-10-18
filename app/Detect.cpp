@@ -28,7 +28,8 @@ Detect::Detect() {}
  * @param input_frame 
  * @return std::vector<cv::Rect> 
  */
-std::vector<cv::Rect> Detect::detectHuman(const cv::Mat &input_frame) {
+void Detect::detectHuman(cv::Mat &input_frame) {
+    HOG.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
 }
 
 /**
@@ -36,8 +37,7 @@ std::vector<cv::Rect> Detect::detectHuman(const cv::Mat &input_frame) {
  * @param input_frame 
  * @return int 
  */
-int Detect::putBox(const cv::Mat &input_frame) {
-    return 0;
+void Detect::putBox(cv::Mat &input_frame) {
 }
 
 /**

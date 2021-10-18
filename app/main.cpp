@@ -12,8 +12,11 @@
 
 #include <iostream>
 #include "../include/Data.hpp"
+#include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
 
 int main() {
+    Data Data;
+    Data.getCamera(0);
     return 0;
 }

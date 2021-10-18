@@ -12,10 +12,11 @@
 
 #pragma once
 
-#include "../include/Data.hpp"
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "../include/Data.hpp"
+#include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
 
 /**
@@ -27,35 +28,64 @@ Data::Data() {}
  * @brief to take the camera frames as input
  * @param camMode: Camera mode to view the camera or not
  */
-int Data::getCamera() {
-    cv::VideoCapture cap(0);
+int Data::getCamera(int mode) {
+    cv::VideoCapture cap(mode);
     if (cap.isOpened() == false) {
       std::cout << "Camera cannot be opened! " << std::endl;
       std::cin.get();
       return -1;
+    } else {
+        while (true) {
+            cap >> frame;
+            resizedFrame = preProcessing(frame);
+            human_detector.detectHuman(resizedFrame);
+            human_detector.putBox(resizedFrame);
+            cv::imshow("Detected Humans", resizedFrame);
+            cv::waitKey(1);
+            char q = static_cast<char> (cv::waitKey(25));
+            if (q == 27) {
+              break;
+            }
+        }
     }
 }
 
 /**
  * @brief to take frames from a video file as input frames
- * @param filePath 
+ * @param filePath path to the video file
  */
-cv::Mat Data::loadVideo(std::string filePath) {
-    cv::Mat read_image = cv::imread(filePath);
-    return read_image;
+int Data::loadVideo(std::string filePath) {
+  cv::VideoCapture cap(filePath);
+    if (cap.isOpened() == false) {
+      std::cout << "Video File cannot be opened! " << std::endl;
+      std::cin.get();
+      break;
+    } else {
+        while (true) {
+          cap >> frame;
+          resizedFrame = preProcessing(frame);
+          human_detector.detectHuman(resizedFrame);
+          human_detector.putBox(resizedFrame);
+          cv::imshow("Detected Humans", resizedFrame);
+          cv::waitKey(1);
+          char q = static_cast<char> (cv::waitKey(25));
+          if (q == 27) {
+            break;
+          }
+        }
+    }
 }
 
 /**
  * @brief to resize and filter input images to operate on
  */
-int Data::preProcessing(const cv::Mat &frame) {
+cv::Mat Data::preProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
   int row, col;
-  cv::Mat resizedFrame;
-  cv::resize(frame_copy, resizedFrame, cv::Size(100, 100));
+  cv::resize(frame_copy, resizedFrame, cv::Size(frame_copy.cols*2, frame_copy.rows*2));
   row = resizedFrame.rows;
   col = resizedFrame.cols;
-  return row;
+  return resizedFrame;
 }
 
 /**

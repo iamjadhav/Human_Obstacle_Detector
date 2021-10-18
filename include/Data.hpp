@@ -14,6 +14,7 @@
 
 #include <string>
 #include <fstream>
+#include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
 
 /**
@@ -23,14 +24,15 @@
  */
 class Data {
  public:
-    Data();
-    int getCamera();
-    cv::Mat loadVideo(std::string filePath);
-    int preProcessing(const cv::Mat &frame);
-    ~Data();
+  Data();
+  Detect human_detector;
+  cv::Mat frame;
+  int getCamera(int mode);
+  int loadVideo(std::string filePath);
+  cv::Mat preProcessing(const cv::Mat &frame);
+  ~Data();
 
  private:
-    cv::Mat frame;
-    cv::Mat frame_copy;
-    cv::Mat resizedFrame;
+  cv::Mat frame_copy;
+  cv::Mat resizedFrame;
 };
