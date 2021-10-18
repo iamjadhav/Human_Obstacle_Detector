@@ -7,6 +7,10 @@ add_executable(
     DataTest.cpp
     ../app/Detect.cpp
     DetectTest.cpp
+    ../app/Train.cpp
+    TrainTest.cpp
+    ../app/Distance.cpp
+    DistanceTest.cpp
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 

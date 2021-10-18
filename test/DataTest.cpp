@@ -16,12 +16,12 @@
 #include <opencv2/opencv.hpp>
 
 /**
- * @brief Test to validate if the camera can be opened 
+ * @brief Test to validate if the camera cannot be opened 
  */
 TEST(Camera, Data_Input_Method_camera_works) {
   Data camera;
-  camera.getCamera(0);
-  EXPECT_EQ(camera.frame.empty(), 0);
+  camera.getCamera(2);
+  EXPECT_EQ(camera.frame.empty(), 1);
 }
 
 /**
