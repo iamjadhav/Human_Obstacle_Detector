@@ -74,10 +74,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## Demo
+## Demos and Overviews
 
-Please find the Demos here:
-- [Phase-1](https://youtu.be/WCugv4o3ceY)
+Please find the Phase-1 Overview here:
+- [Phase-1](https://youtu.be/lwNjuT5e-FM)
 
 ## Known Issues/Bugs 
 
@@ -110,22 +110,10 @@ To Run the program/demo
 
 ## Links
 
-AIP Process
-```
-https://docs.google.com/spreadsheets/d/1bapR4zMCzfcwQHhxAm6KktWsMINTTPEt/edit#gid=2052063551
-```
+AIP Process --> [Link](https://docs.google.com/spreadsheets/d/1bapR4zMCzfcwQHhxAm6KktWsMINTTPEt/edit#gid=2052063551)
 
-Sprint Planning Sheet
-```
-https://docs.google.com/document/d/1Xaz2rZ7OrmSh3bSE351XQz483VGetJkJdF37AjUF9Ro/edit
-```
+Sprint Planning Sheet--> [Link](https://docs.google.com/document/d/1Xaz2rZ7OrmSh3bSE351XQz483VGetJkJdF37AjUF9Ro/edit)
 
-Phase-1 Demo
-```
-https://youtu.be/WCugv4o3ceY
-```
+Phase-1 Overview --> [Link](https://youtu.be/lwNjuT5e-FM)
 
-Proposal
-```
-https://youtu.be/2ptUw7MpsMc
-```
+Proposal --> [Link](https://youtu.be/2ptUw7MpsMc)
