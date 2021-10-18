@@ -14,8 +14,13 @@
 #include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
 
-TEST(Box, Bounding_Box_Presence) {
-//   Detect box;
-//   cv::Mat frame;
-  EXPECT_EQ(0, 0);
+/**
+ * @brief Test to verify the size of the bounding box
+ */
+TEST(Box, Bounding_Box_Presence_eq_1) {
+  Detect box;
+  cv::Mat frame;
+  frame = cv::imread("../box_test.jpg");
+  box.detectHuman(frame);
+  EXPECT_EQ(box.putBox(frame), 1);
 }

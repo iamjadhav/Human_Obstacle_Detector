@@ -25,8 +25,9 @@
 Data::Data() {}
 
 /**
- * @brief to take the camera frames as input
- * @param camMode: Camera mode to view the camera or not
+ * @brief To take the camera frames as input
+ * @param mode : Camera mode to view the camera or not
+ * @return int 
  */
 int Data::getCamera(int mode) {
     cv::VideoCapture cap(mode);
@@ -51,15 +52,16 @@ int Data::getCamera(int mode) {
 }
 
 /**
- * @brief to take frames from a video file as input frames
- * @param filePath path to the video file
+ * @brief To take frames from a video file as input frames
+ * @param filePath Path to the video file
+ * @return int 
  */
 int Data::loadVideo(std::string filePath) {
   cv::VideoCapture cap(filePath);
     if (cap.isOpened() == false) {
       std::cout << "Video File cannot be opened! " << std::endl;
       std::cin.get();
-      break;
+      return -1;
     } else {
         while (true) {
           cap >> frame;
@@ -77,7 +79,9 @@ int Data::loadVideo(std::string filePath) {
 }
 
 /**
- * @brief to resize and filter input images to operate on
+ * @brief To resize and filter input images to operate on
+ * @param frame : Frame to be preprocessed
+ * @return cv::Mat 
  */
 cv::Mat Data::preProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();

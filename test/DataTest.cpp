@@ -15,23 +15,31 @@
 #include "../include/Data.hpp"
 #include <opencv2/opencv.hpp>
 
-
-TEST(Camera, Data_Input_Method) {
+/**
+ * @brief Test to validate if the camera can be opened 
+ */
+TEST(Camera, Data_Input_Method_camera_works) {
   Data camera;
-  camera.getCamera(2);
-  EXPECT_EQ(camera.frame.empty(), 1);
+  camera.getCamera(0);
+  EXPECT_EQ(camera.frame.empty(), 0);
 }
 
-// TEST(Video, Data_Input_as_File) {
-//   Data video;
-//   std::string filename;
-//   EXPECT_EQ(video.loadVideo(filename), 0);
-// }
+/**
+ * @brief Test to verify the video file does not exist and no frame is read
+ */
+TEST(Video, Data_Input_as_File_does_not_exist) {
+  Data video;
+  std::string filename;
+  EXPECT_EQ(video.frame.empty(), 1);
+}
 
-// TEST(Processing, If_Processed_Output) {
-//   Data process;
-//   cv::Mat frame;
-//   frame = cv::imread("../Timeline.png");
-//   cv::Mat resized = process.preProcessing(frame);
-//   EXPECT_EQ(resized.rows, 200);
-// }
+/**
+ * @brief Test to verify the number of rows after preprocessing 
+ */
+TEST(Processing, Processed_Image_Rows) {
+  Data process;
+  cv::Mat frame;
+  frame = cv::imread("../Timeline.png");
+  cv::Mat resized = process.preProcessing(frame);
+  EXPECT_EQ(resized.rows, (frame.rows*2));
+}

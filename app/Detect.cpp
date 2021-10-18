@@ -26,18 +26,27 @@ Detect::Detect() {}
 /**
  * @brief Method to detect humans in input frames
  * @param input_frame 
- * @return std::vector<cv::Rect> 
  */
 void Detect::detectHuman(cv::Mat &input_frame) {
-    HOG.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
+  HOG.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
+  HOG.detectMultiScale(input_frame, box_coordinates, weights);
 }
 
 /**
  * @brief Method to draw bouding boxes around detected humans
- * @param input_frame 
- * @return int 
+ * @param input_frame : Frame returned from detectHuman method
+ * @return int : Bounding box size
  */
-void Detect::putBox(cv::Mat &input_frame) {
+int Detect::putBox(cv::Mat &input_frame) {
+  for ( size_t i = 0; i < box_coordinates.size(); i++ ) {
+    cv::Rect r = box_coordinates[i];
+    cv::rectangle(input_frame, r, cv::Scalar(0, 0, 255), 3);
+    std::stringstream temp;
+    temp << weights[i];
+    cv::putText(input_frame, temp.str(), cv::Point(r.x, r.y+50),
+                cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255) );
+  }
+  return box_coordinates.size();
 }
 
 /**

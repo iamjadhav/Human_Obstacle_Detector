@@ -2,7 +2,7 @@
  * @file main.cpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
- * @brief Stubs and tests for Data class
+ * @brief Human Obstacle Detector
  * @version 0.1
  * @date 2021-10-15
  * 

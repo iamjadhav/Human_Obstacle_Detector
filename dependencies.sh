@@ -37,8 +37,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 
 # Number of core in your computer
 # nproc
-## substitute 16 by output of nproc
-make -j16
+## substitute 4 by output of nproc
+make -j4
 sudo make install
 sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
 sudo ldconfig
