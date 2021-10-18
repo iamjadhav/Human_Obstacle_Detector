@@ -1,3 +1,7 @@
+[![Build Status](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector.svg?branch=development_sprint_1)](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector)
+[![Coverage Status](https://coveralls.io/repos/github/iamjadhav/Human_Obstacle_Detector/badge.svg?branch=development_sprint_1)](https://coveralls.io/github/iamjadhav/Human_Obstacle_Detector?branch=development_sprint_1)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 # Human_Obstacle_Detector
 
 Human Obstacle Detector using Modern C++ Programming Language.
