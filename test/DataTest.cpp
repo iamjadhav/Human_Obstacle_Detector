@@ -1,7 +1,8 @@
 /**
  * @file DataTest.cpp
- * @author your name (you@domain.com)
- * @brief 
+ * @author Aditya Jadhav (amjadhav@umd.edu)
+ * @author Abhishek Nalawade (abhi1793@umd.edu)
+ * @brief Data Class Tests 
  * @version 0.1
  * @date 2021-10-17
  * 

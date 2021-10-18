@@ -5,6 +5,8 @@ add_executable(
     main.cpp
     ../app/Data.cpp
     DataTest.cpp
+    ../app/Detect.cpp
+    DetectTest.cpp
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 

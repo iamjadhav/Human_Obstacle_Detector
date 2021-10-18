@@ -1,8 +1,8 @@
 /**
- * @file data.hpp
+ * @file Data.cpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
- * @brief 
+ * @brief Data Class Definition
  * @version 0.1
  * @date 2021-10-15
  * 
@@ -30,7 +30,7 @@ Data::Data() {}
 int Data::getCamera() {
     cv::VideoCapture cap(0);
     if (cap.isOpened() == false) {
-      std::cout << "Cannot open the video camera" << std::endl;
+      std::cout << "Camera cannot be opened! " << std::endl;
       std::cin.get();
       return -1;
     }

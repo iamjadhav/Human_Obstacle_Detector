@@ -1,8 +1,8 @@
 /**
- * @file data.hpp
+ * @file Data.hpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
- * @brief 
+ * @brief Data Class Declaration
  * @version 0.1
  * @date 2021-10-15
  * 
@@ -23,13 +23,14 @@
  */
 class Data {
  public:
-  Data();
-  int getCamera();
-  cv::Mat loadVideo(std::string filePath);
-  int preProcessing(const cv::Mat &frame);
-  ~Data();
+    Data();
+    int getCamera();
+    cv::Mat loadVideo(std::string filePath);
+    int preProcessing(const cv::Mat &frame);
+    ~Data();
+
  private:
-  cv::Mat frame;
-  cv::Mat frame_copy;
-  cv::Mat resizedFrame;
+    cv::Mat frame;
+    cv::Mat frame_copy;
+    cv::Mat resizedFrame;
 };
