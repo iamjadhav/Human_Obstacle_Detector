@@ -45,6 +45,9 @@ int Data::getCamera(int mode) {
             heights = human_detector.putBox(resizedFrame);
             depths = dist.findDepth(heights);
             coor = dist.getXY(depths, human_detector.box_coordinates);
+            for (int i=0; i<coor.size();i++){
+              std::cout << "X " << coor[i][0]<<" Y " << coor[i][1]<<" Z " <<coor[i][2] <<"\n";
+              }
             cv::imshow("Detected Humans", resizedFrame);
             cv::waitKey(1);
             char q = static_cast<char> (cv::waitKey(25));
