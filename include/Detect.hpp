@@ -24,12 +24,12 @@
 class Detect {
  public:
   Detect();
+  std::vector<cv::Rect> box_coordinates;
   cv::HOGDescriptor HOG;
   void detectHuman(cv::Mat &input_frame);
   std::vector<double> putBox(cv::Mat &input_frame);
   ~Detect();
 
  private:
-  std::vector<cv::Rect> box_coordinates;
   std::vector<double> weights;
 };
