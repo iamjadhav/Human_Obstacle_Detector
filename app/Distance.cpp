@@ -32,16 +32,22 @@ int Distance::camToRobotTransform() {
   return len;
 }
 
+/**
+ * @brief Estimates the depth
+ */
 double Distance::findDepth(std::vector<double> &boxHeight){
-  double depth;
+  std::vector<double> depth;
+  double tempDepth;
   for (double i : boxHeight){
-    std::cout << " i/2 :" << i/4 << std::endl;
-    depth = (perceivedFocalLength * avgHumanHeight)/(i/4);
-    std::cout<<""<<depth << "\n";
+    //std::cout << " i/2 :" << i/4 << std::endl;
+    tempDepth = (perceivedFy * avgHumanHeight)/(i/4);
+    //std::cout<<""<<tempDepth << "\n";
+    depth.push_back(tempDepth);
   }
-  return depth;
+  return tempDepth;
 
 }
+
 
 /**
  * @brief To display the location of detected humans on-screen.
