@@ -53,7 +53,14 @@ std::vector<double> Distance::findDepth(std::vector<double> &boxHeight){
  */
 std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std::vector<cv::Rect> &r){
   double X, Y, centx, centy;
-  std::vector<std::vector<double>> worldCoordinates={{1,1},{2,2}};
+  std::vector<std::vector<double>> worldCoordinates;
+  for(int i = 0; i < depth.size(); i++){
+    std::vector<double> xyzCoordinates;
+    // cetroid of human in pixel coordinates
+    centx = r[i].x + (r[i].width/2);
+    centy = r[i].y + (r[i].height/2);
+    
+  }
   return worldCoordinates;
 }
 
