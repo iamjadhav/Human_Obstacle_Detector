@@ -36,12 +36,15 @@ int Data::getCamera(int mode) {
       std::cout << "Camera cannot be opened! " << std::endl;
     } else {
         while (true) {
+          std::vector<std::vector<double>> coor;
             std::vector<double> heights;
+            std::vector<double> depths;
             cap >> frame;
             resizedFrame = preProcessing(frame);
             human_detector.detectHuman(resizedFrame);
             heights = human_detector.putBox(resizedFrame);
-            dist.findDepth(heights);
+            depths = dist.findDepth(heights);
+            coor = dist.getXY(depths, human_detector.box_coordinates);
             cv::imshow("Detected Humans", resizedFrame);
             cv::waitKey(1);
             char q = static_cast<char> (cv::waitKey(25));
