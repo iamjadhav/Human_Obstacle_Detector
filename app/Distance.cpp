@@ -59,7 +59,13 @@ std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std
     // cetroid of human in pixel coordinates
     centx = r[i].x + (r[i].width/2);
     centy = r[i].y + (r[i].height/2);
-    
+    // camera frame X coordinate
+    X = ((640-centx)*(depth[i]))/(perceivedFx);
+    Y = ((360-centy)*(depth[i]))/(perceivedFy);
+    xyzCoordinates.push_back(X);
+    xyzCoordinates.push_back(Y);
+    xyzCoordinates.push_back(depth[i]);
+    worldCoordinates.push_back(xyzCoordinates);
   }
   return worldCoordinates;
 }
