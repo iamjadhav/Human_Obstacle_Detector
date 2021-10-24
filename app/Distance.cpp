@@ -35,7 +35,7 @@ int Distance::camToRobotTransform() {
 /**
  * @brief Estimates the depth
  */
-double Distance::findDepth(std::vector<double> &boxHeight){
+std::vector<double> Distance::findDepth(std::vector<double> &boxHeight){
   std::vector<double> depth;
   double tempDepth;
   for (double i : boxHeight){
@@ -44,9 +44,10 @@ double Distance::findDepth(std::vector<double> &boxHeight){
     //std::cout<<""<<tempDepth << "\n";
     depth.push_back(tempDepth);
   }
-  return tempDepth;
+  return depth;
 
 }
+
 
 
 /**
