@@ -48,6 +48,14 @@ std::vector<double> Distance::findDepth(std::vector<double> &boxHeight){
 
 }
 
+/**
+ * @brief Gets the X and Y coordinates w.r.t camera frame
+ */
+std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std::vector<cv::Rect> &r){
+  double X, Y, centx, centy;
+  std::vector<std::vector<double>> worldCoordinates={{1,1},{2,2}};
+  return worldCoordinates;
+}
 
 
 /**
