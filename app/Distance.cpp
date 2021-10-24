@@ -5,9 +5,9 @@
  * @brief Distance Class Definition
  * @version 0.1
  * @date 2021-10-17
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #pragma once
@@ -30,6 +30,17 @@ int Distance::camToRobotTransform() {
   std::vector<double> transform = {1, 2, 3, 4};
   int len = transform.size();
   return len;
+}
+
+double Distance::findDepth(std::vector<double> &boxHeight){
+  double depth;
+  for (double i : boxHeight){
+    std::cout << " i/2 :" << i/4 << std::endl;
+    depth = (perceivedFocalLength * avgHumanHeight)/(i/4);
+    std::cout<<""<<depth << "\n";
+  }
+  return depth;
+
 }
 
 /**
