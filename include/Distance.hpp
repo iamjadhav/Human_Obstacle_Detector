@@ -34,6 +34,6 @@ class Distance {
   std::vector<double> pixelLocation;
   double fov = 19.2306;
   double avgHumanHeight = 175;
-  double perceivedFocalLength = 1028.57143;
+  double perceivedFy = 1028.57143;
   cv::Mat rotationMat;
 };
