@@ -24,7 +24,7 @@ int main() {
     std::cin >> input;
     if(input == 'y' || input == 'Y') {
       data.getCamera(0);
-    } else(input == 'n' || input == 'N');{
+    } else if(input == 'n' || input == 'N'){
       std::cout << "Do you want to detect humans in a pre-recorded"
        << " video?(y/n)" << std::endl;
       std::cin >> input;
