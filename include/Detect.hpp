@@ -5,9 +5,9 @@
  * @brief Detect Class Declaration
  * @version 0.1
  * @date 2021-10-17
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #pragma once
@@ -26,7 +26,7 @@ class Detect {
   Detect();
   cv::HOGDescriptor HOG;
   void detectHuman(cv::Mat &input_frame);
-  int putBox(cv::Mat &input_frame);
+  std::vector<double> putBox(cv::Mat &input_frame);
   ~Detect();
 
  private:
