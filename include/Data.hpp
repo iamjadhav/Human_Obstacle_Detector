@@ -30,6 +30,7 @@ class Data {
   int getCamera(int mode);
   int loadVideo(std::string filePath);
   cv::Mat preProcessing(const cv::Mat &frame);
+  cv::Mat videoPreProcessing(const cv::Mat &frame);
   ~Data();
 
  private:

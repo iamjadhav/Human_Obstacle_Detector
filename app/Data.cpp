@@ -5,9 +5,9 @@
  * @brief Data Class Definition
  * @version 0.1
  * @date 2021-10-15
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #pragma once
@@ -27,7 +27,7 @@ Data::Data() {}
 /**
  * @brief To take the camera frames as input
  * @param mode : Camera mode to view the camera or not
- * @return int 
+ * @return int
  */
 int Data::getCamera(int mode) {
   frame.release();
@@ -55,7 +55,7 @@ int Data::getCamera(int mode) {
 /**
  * @brief To take frames from a video file as input frames
  * @param filePath Path to the video file
- * @return int 
+ * @return int
  */
 int Data::loadVideo(std::string filePath) {
   frame.release();
@@ -65,7 +65,7 @@ int Data::loadVideo(std::string filePath) {
     } else {
         while (true) {
           cap >> frame;
-          resizedFrame = preProcessing(frame);
+          resizedFrame = videoPreProcessing(frame);
           human_detector.detectHuman(resizedFrame);
           human_detector.putBox(resizedFrame);
           cv::imshow("Detected Humans", resizedFrame);
@@ -83,12 +83,26 @@ int Data::loadVideo(std::string filePath) {
 /**
  * @brief To resize and filter input images to operate on
  * @param frame : Frame to be preprocessed
- * @return cv::Mat 
+ * @return cv::Mat
  */
 cv::Mat Data::preProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
   int row, col;
-  cv::resize(frame_copy, resizedFrame, cv::Size(frame_copy.cols*2, frame_copy.rows*2));
+  cv::resize(frame_copy, resizedFrame, cv::Size(frame_copy.cols*2,
+              frame_copy.rows*2));
+  return resizedFrame;
+}
+
+/**
+ * @brief To resize and filter input video frames to operate on
+ * @param frame : Frame to be preprocessed
+ * @return cv::Mat
+ */
+cv::Mat Data::videoPreProcessing(const cv::Mat &frame) {
+  frame_copy = frame.clone();
+  int row, col;
+  cv::resize(frame_copy, resizedFrame, cv::Size((int)frame_copy.cols/2,
+              (int)frame_copy.rows/2));
   return resizedFrame;
 }
 

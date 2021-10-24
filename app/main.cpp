@@ -19,21 +19,22 @@
 int main() {
     char input;
     Data data;
-    std::cout << "Do you want to use detect humans using camera?(y/n)"
+    std::cout << "Do you want to detect humans using camera?(y/n)"
      << std::endl;
     std::cin >> input;
     if(input == 'y' || input == 'Y') {
       data.getCamera(0);
-    } else{
-      std::cout << "Do you want to use detect humans in a pre-recorded"
+    } else(input == 'n' || input == 'N');{
+      std::cout << "Do you want to detect humans in a pre-recorded"
        << " video?(y/n)" << std::endl;
       std::cin >> input;
       if (input == 'y' || input == 'Y'){
         std::cout << "Enter the file path: \n";
         std::string path;
         std::cin >> path;
-        std::cout<<path;
         data.loadVideo(path);
+      } else {
+        std::cout << "Sorry to see you go! \n";
       }
     }
 
