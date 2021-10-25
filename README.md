@@ -38,6 +38,7 @@ We will plan the work in Sprints and switch between the roles of driver and navi
 * Ubuntu 18.04 LTS
 * Modern C++ Programming Language
 * OpenCV Library
+* Eigen Library
 * CMake Build System
 * Doxygen
 
