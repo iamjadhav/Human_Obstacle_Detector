@@ -89,7 +89,8 @@ std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std
  */
 void Distance::displayLocation(std::vector<Eigen::Vector4d> &locations) {
   for(Eigen::Vector4d i: locations){
-    cout << "Deected human is located at \n" << i <<"\n";
+    // i.resize(3);
+    std::cout << "Detected human is located at \n" << i.head(3) <<"\n";
   }
 }
 
