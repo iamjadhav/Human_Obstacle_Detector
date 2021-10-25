@@ -12,12 +12,12 @@
 
 #pragma once
 
-#include "../include/Distance.hpp"
+#include <Eigen/Dense>
 #include <iostream>
 #include <string>
-#include <fstream>
+#include "../include/Distance.hpp"
 #include <opencv2/opencv.hpp>
-#include <Eigen/Dense>
+
 
 /**
  * @brief Construct a new Detect:: Detect object
@@ -29,7 +29,8 @@ Distance::Distance() {}
  * @param camXYZ : Camera frame X Y coordinates
  * @return std::vector<Eigen::Vector4d> :
  */
-std::vector<Eigen::Vector4d> Distance::camToRobotTransform(std::vector<std::vector<double>> &camXYZ) {
+std::vector<Eigen::Vector4d> Distance::camToRobotTransform(
+                                    std::vector<std::vector<double>> &camXYZ) {
   std::vector<Eigen::Vector4d> locations;
   poseMatrix << 1, 0, 0, 1,
                 0, 1, 0, 2,
@@ -45,14 +46,14 @@ std::vector<Eigen::Vector4d> Distance::camToRobotTransform(std::vector<std::vect
 }
 
 /**
- * @brief 
- * @param boxHeight :
+ * @brief Finds depth of the detected humans
+ * @param boxHeight : contains the heights of all detected boxes
  * @return std::vector<double> :
  */
 std::vector<double> Distance::findDepth(std::vector<double> &boxHeight) {
   std::vector<double> depth;
-  double tempDepth;
   for (double i : boxHeight) {
+    double tempDepth;
     tempDepth = (perceivedFy * avgHumanHeight)/(i/4);
     depth.push_back(tempDepth);
   }
@@ -61,14 +62,15 @@ std::vector<double> Distance::findDepth(std::vector<double> &boxHeight) {
 
 /**
  * @brief Gets the X and Y coordinates w.r.t camera frame
- * @param depth :
- * @param r :
+ * @param depth : contains the estimated depth of detected humans
+ * @param r : contains the detected boxes of humans
  * @return std::vector<std::vector<double>> :
  */
-std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std::vector<cv::Rect> &r) {
-  double X, Y, centx, centy;
+std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth,
+                                                  std::vector<cv::Rect> &r) {
   std::vector<std::vector<double>> worldCoordinates;
-  for (int i = 0; i < depth.size(); i++) {
+  for (unsigned int i = 0; i < depth.size(); i++) {
+    double X, Y, centx, centy;
     std::vector<double> xyzCoordinates;
     // cetroid of human in pixel coordinates
     centx = r[i].x + (r[i].width/2);
@@ -87,11 +89,12 @@ std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std
 
 /**
  * @brief To display the location of detected humans on-screen.
- * @param locations :
- * @param frameInput :
+ * @param locations : contians human locations in robot reference frame
+ * @param frameInput : contians the name of input type eg camera or video
  * @return int :
  */
-int Distance::displayLocation(std::vector<Eigen::Vector4d> &locations, std::string frameInput) {
+int Distance::displayLocation(std::vector<Eigen::Vector4d> &locations,
+                              std::string &frameInput) {
   int id = 0;
   for (Eigen::Vector4d i : locations) {
     if (frameInput == "camera") {

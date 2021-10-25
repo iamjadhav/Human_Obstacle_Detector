@@ -12,13 +12,12 @@
 
 #pragma once
 
+#include <Eigen/Dense>
 #include <iostream>
 #include <string>
-#include <fstream>
 #include "../include/Data.hpp"
 #include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
-#include <Eigen/Dense>
 
 /**
  * @brief Construct a new Data:: Data object
@@ -117,7 +116,6 @@ double Data::loadVideo(std::string filePath) {
  */
 cv::Mat Data::preProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
-  int row, col;
   cv::resize(frame_copy, resizedFrame, cv::Size(frame_copy.cols*2,
               frame_copy.rows*2));
   return resizedFrame;
@@ -130,7 +128,6 @@ cv::Mat Data::preProcessing(const cv::Mat &frame) {
  */
 cv::Mat Data::videoPreProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
-  int row, col;
   cv::resize(frame_copy, resizedFrame, cv::Size((int)frame_copy.cols/2,
             (int)frame_copy.rows/2));
   return resizedFrame;

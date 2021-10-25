@@ -16,7 +16,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <fstream>
 #include <opencv2/opencv.hpp>
 
 /**
@@ -26,8 +25,8 @@ Detect::Detect() {}
 
 /**
  * @brief Method to detect humans in input frames
- * @param input_frame :Frame to detect humans with
- * @return std::vector<double> 
+ * @param input_frame :Frame to detect humans
+ * @return std::vector<double>
  */
 std::vector<double> Detect::detectHuman(cv::Mat &input_frame) {
   HOG.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
@@ -40,9 +39,10 @@ std::vector<double> Detect::detectHuman(cv::Mat &input_frame) {
  * @brief Method to draw bouding boxes around detected humans
  * @param input_frame : Frame returned from detectHuman method
  * @param weights : Weights used in the classifier
- * @return std::vector<double> 
+ * @return std::vector<double>
  */
-std::vector<double> Detect::putBox(cv::Mat &input_frame, std::vector<double> &weights) {
+std::vector<double> Detect::putBox(cv::Mat &input_frame,
+                                    std::vector<double> &weights) {
   std::vector<double> heights;
   for ( size_t i = 0; i < box_coordinates.size(); i++ ) {
     cv::Rect r = box_coordinates[i];
