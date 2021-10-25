@@ -2,12 +2,12 @@
  * @file DataTest.cpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
- * @brief Data Class Tests 
+ * @brief Data Class Tests
  * @version 0.1
  * @date 2021-10-17
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #include <gtest/gtest.h>
@@ -16,7 +16,7 @@
 #include <opencv2/opencv.hpp>
 
 /**
- * @brief Test to validate if the camera cannot be opened 
+ * @brief Test to validate if the camera cannot be opened
  */
 TEST(Camera, Data_Input_Method_camera_works) {
   Data camera;
@@ -34,7 +34,7 @@ TEST(Video, Data_Input_as_File_does_not_exist) {
 }
 
 /**
- * @brief Test to verify the number of rows after preprocessing 
+ * @brief Test to verify the number of rows after preprocessing
  */
 TEST(Processing, Processed_Image_Rows) {
   Data process;
@@ -42,4 +42,15 @@ TEST(Processing, Processed_Image_Rows) {
   frame = cv::imread("../Timeline.png");
   cv::Mat resized = process.preProcessing(frame);
   EXPECT_EQ(resized.rows, (frame.rows*2));
+}
+
+/**
+ * @brief Test to verify the number of columns after preprocessing
+ */
+TEST(Video_Processing, Processed_Video_frame_Columns) {
+  Data process;
+  cv::Mat frame;
+  frame = cv::imread("../Timeline.png");
+  cv::Mat resized = process.videoPreProcessing(frame);
+  EXPECT_EQ(resized.cols, (frame.cols/2));
 }
