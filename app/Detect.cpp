@@ -26,7 +26,8 @@ Detect::Detect() {}
 
 /**
  * @brief Method to detect humans in input frames
- * @param input_frame
+ * @param input_frame :Frame to detect humans with
+ * @return std::vector<double> 
  */
 std::vector<double> Detect::detectHuman(cv::Mat &input_frame) {
   HOG.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
@@ -38,7 +39,8 @@ std::vector<double> Detect::detectHuman(cv::Mat &input_frame) {
 /**
  * @brief Method to draw bouding boxes around detected humans
  * @param input_frame : Frame returned from detectHuman method
- * @return int : Bounding box size
+ * @param weights : Weights used in the classifier
+ * @return std::vector<double> 
  */
 std::vector<double> Detect::putBox(cv::Mat &input_frame, std::vector<double> &weights) {
   std::vector<double> heights;

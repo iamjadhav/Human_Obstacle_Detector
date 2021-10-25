@@ -26,16 +26,18 @@ Distance::Distance() {}
 
 /**
  * @brief Transformation between camera and robot frame
+ * @param camXYZ : Camera frame X Y coordinates
+ * @return std::vector<Eigen::Vector4d> :
  */
 std::vector<Eigen::Vector4d> Distance::camToRobotTransform(std::vector<std::vector<double>> &camXYZ) {
   std::vector<Eigen::Vector4d> locations;
-  poseMatrix << 1,0,0,1,
-                0,1,0,2,
-                0,0,1,0,
-                0,0,0,1;
+  poseMatrix << 1, 0, 0, 1,
+                0, 1, 0, 2,
+                0, 0, 1, 0,
+                0, 0, 0, 1;
   Eigen::Vector4d robotXYZ;
-  for (std::vector<double> i : camXYZ){
-    Eigen::Vector4d xyz(i[0],i[1],i[2],1);
+  for (std::vector<double> i : camXYZ) {
+    Eigen::Vector4d xyz(i[0], i[1], i[2], 1);
     robotXYZ << poseMatrix * xyz;
     locations.push_back(robotXYZ);
   }
@@ -43,26 +45,30 @@ std::vector<Eigen::Vector4d> Distance::camToRobotTransform(std::vector<std::vect
 }
 
 /**
- * @brief Estimates the depth
+ * @brief 
+ * @param boxHeight :
+ * @return std::vector<double> :
  */
-std::vector<double> Distance::findDepth(std::vector<double> &boxHeight){
+std::vector<double> Distance::findDepth(std::vector<double> &boxHeight) {
   std::vector<double> depth;
   double tempDepth;
-  for (double i : boxHeight){
+  for (double i : boxHeight) {
     tempDepth = (perceivedFy * avgHumanHeight)/(i/4);
     depth.push_back(tempDepth);
   }
   return depth;
-
 }
 
 /**
  * @brief Gets the X and Y coordinates w.r.t camera frame
+ * @param depth :
+ * @param r :
+ * @return std::vector<std::vector<double>> :
  */
-std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std::vector<cv::Rect> &r){
+std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std::vector<cv::Rect> &r) {
   double X, Y, centx, centy;
   std::vector<std::vector<double>> worldCoordinates;
-  for(int i = 0; i < depth.size(); i++){
+  for (int i = 0; i < depth.size(); i++) {
     std::vector<double> xyzCoordinates;
     // cetroid of human in pixel coordinates
     centx = r[i].x + (r[i].width/2);
@@ -81,23 +87,25 @@ std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std
 
 /**
  * @brief To display the location of detected humans on-screen.
+ * @param locations :
+ * @param frameInput :
+ * @return int :
  */
 int Distance::displayLocation(std::vector<Eigen::Vector4d> &locations, std::string frameInput) {
   int id = 0;
-  for(Eigen::Vector4d i: locations){
-    if (frameInput == "camera"){
+  for (Eigen::Vector4d i : locations) {
+    if (frameInput == "camera") {
       std::cout << "Detected human [" << id+1 << "] is located at (meters) \n"
                 <<"X: " << std::setprecision(3) << i[0]/100 <<" Y: "<<
                  std::setprecision(3) << i[1]/100 <<" Depth: " <<
                  std::setprecision(3) << i[2]/100 << "\n\n";
-    } else if (frameInput == "video"){
+    } else if (frameInput == "video") {
       std::cout << "Detected human [" << id+1 << "] is located at (meters) \n"
                 <<"X: " << std::setprecision(3) << i[0]/1000 <<" Y: "<<
                  std::setprecision(3) << i[1]/1000 <<" Depth: " <<
                  std::setprecision(3) << i[2]/1000 << "\n\n";
     }
     id++;
-
   }
   return id;
 }

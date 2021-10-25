@@ -49,7 +49,7 @@ int Data::getCamera(int mode) {
               break;
             resizedFrame = preProcessing(frame);
             temp = human_detector.detectHuman(resizedFrame);
-            heights = human_detector.putBox(resizedFrame,temp);
+            heights = human_detector.putBox(resizedFrame, temp);
             depths = dist.findDepth(heights);
             coor = dist.getXY(depths, human_detector.box_coordinates);
             finalLocations = dist.camToRobotTransform(coor);
@@ -69,7 +69,7 @@ int Data::getCamera(int mode) {
 /**
  * @brief To take frames from a video file as input frames
  * @param filePath Path to the video file
- * @return int
+ * @return double
  */
 double Data::loadVideo(std::string filePath) {
   frame.release();
@@ -91,7 +91,7 @@ double Data::loadVideo(std::string filePath) {
             break;
           resizedFrame = videoPreProcessing(frame);
           temp = human_detector.detectHuman(resizedFrame);
-          heights = human_detector.putBox(resizedFrame,temp);
+          heights = human_detector.putBox(resizedFrame, temp);
           depths = dist.findDepth(heights);
           coor = dist.getXY(depths, human_detector.box_coordinates);
           finalLocations = dist.camToRobotTransform(coor);
@@ -107,7 +107,7 @@ double Data::loadVideo(std::string filePath) {
       cap.release();
       cv::destroyAllWindows();
     }
-    return locx;
+  return locx;
 }
 
 /**
@@ -132,7 +132,7 @@ cv::Mat Data::videoPreProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
   int row, col;
   cv::resize(frame_copy, resizedFrame, cv::Size((int)frame_copy.cols/2,
-              (int)frame_copy.rows/2));
+            (int)frame_copy.rows/2));
   return resizedFrame;
 }
 

@@ -11,10 +11,10 @@
  */
 
 #include <iostream>
+#include <string>
 #include "../include/Data.hpp"
 #include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
-#include <string>
 
 int main() {
     char input;
@@ -22,13 +22,13 @@ int main() {
     std::cout << "Do you want to detect humans using camera?(y/n)"
      << std::endl;
     std::cin >> input;
-    if(input == 'y' || input == 'Y') {
+    if (input == 'y' || input == 'Y') {
       data.getCamera(0);
-    } else if(input == 'n' || input == 'N'){
+    } else if (input == 'n' || input == 'N') {
       std::cout << "Do you want to detect humans in a pre-recorded"
        << " video?(y/n)" << std::endl;
       std::cin >> input;
-      if (input == 'y' || input == 'Y'){
+      if (input == 'y' || input == 'Y') {
         std::cout << "Enter the file path: \n";
         std::string path;
         std::cin >> path;
@@ -37,6 +37,5 @@ int main() {
         std::cout << "Sorry to see you go! \n";
       }
     }
-
-    return 0;
+  return 0;
 }
