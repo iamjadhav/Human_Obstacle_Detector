@@ -41,10 +41,11 @@ int Data::getCamera(int mode) {
             std::vector<Eigen::Vector4d> finalLocations;
             std::vector<double> heights;
             std::vector<double> depths;
+            std::vector<double> temp;
             cap >> frame;
             resizedFrame = preProcessing(frame);
-            human_detector.detectHuman(resizedFrame);
-            heights = human_detector.putBox(resizedFrame);
+            temp = human_detector.detectHuman(resizedFrame);
+            heights = human_detector.putBox(resizedFrame,temp);
             depths = dist.findDepth(heights);
             coor = dist.getXY(depths, human_detector.box_coordinates);
             // for (int i=0; i<coor.size();i++){
@@ -76,10 +77,11 @@ int Data::loadVideo(std::string filePath) {
       std::cout << "Video File cannot be opened! " << std::endl;
     } else {
         while (true) {
+          std::vector<double> temp;
           cap >> frame;
           resizedFrame = videoPreProcessing(frame);
-          human_detector.detectHuman(resizedFrame);
-          human_detector.putBox(resizedFrame);
+          temp = human_detector.detectHuman(resizedFrame);
+          human_detector.putBox(resizedFrame,temp);
           cv::imshow("Detected Humans", resizedFrame);
           cv::waitKey(1);
           char q = static_cast<char> (cv::waitKey(25));
