@@ -18,6 +18,7 @@
 #include "../include/Data.hpp"
 #include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
+#include <Eigen/Dense>
 
 /**
  * @brief Construct a new Data:: Data object
@@ -36,7 +37,8 @@ int Data::getCamera(int mode) {
       std::cout << "Camera cannot be opened! " << std::endl;
     } else {
         while (true) {
-          std::vector<std::vector<double>> coor;
+            std::vector<std::vector<double>> coor;
+            std::vector<Eigen::Vector4d> finalLocations;
             std::vector<double> heights;
             std::vector<double> depths;
             cap >> frame;
@@ -48,7 +50,8 @@ int Data::getCamera(int mode) {
             // for (int i=0; i<coor.size();i++){
             //   std::cout << "X " << coor[i][0]<<" Y " << coor[i][1]<<" Z " <<coor[i][2] <<"\n";
             //   }
-            dist.camToRobotTransform(coor);
+            finalLocations = dist.camToRobotTransform(coor);
+            dist.displayLocation(finalLocations);
             cv::imshow("Detected Humans", resizedFrame);
             cv::waitKey(1);
             char q = static_cast<char> (cv::waitKey(25));
