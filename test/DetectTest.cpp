@@ -17,21 +17,12 @@
 /**
  * @brief Test to verify the size of the bounding box
  */
-// TEST(Box, Bounding_Box_Presence_eq_1) {
-//   Detect box;
-//   cv::Mat frame;
-//   frame = cv::imread("../box_test.jpg");
-//   box.detectHuman(frame);
-//   EXPECT_EQ(box.putBox(frame), 1);
-// }
-
 TEST(Detect_test, checking_detected_human) {
   Detect det;
   cv::Mat frame;
   std::vector<double> weights;
-  frame = cv::imread("../box_test.jpg");
-  weights = det.detectHuman(frame);
-  EXPECT_EQ(weights.size(), 1);
+  frame = cv::imread("../testdata/box_test.jpg");
+  EXPECT_EQ(det.detectHuman(frame).size(), 1);
 }
 
 TEST(Bounding_box_test, checking_height){
@@ -39,8 +30,7 @@ TEST(Bounding_box_test, checking_height){
   cv::Mat frame;
   std::vector<double> heights;
   std::vector<double> weights;
-  frame = cv::imread("../box_test.jpg");
+  frame = cv::imread("../testdata/box_test.jpg");
   weights = box.detectHuman(frame);
-  heights = box.putBox(frame,weights);
-  EXPECT_EQ(heights[0], 483);
+  EXPECT_EQ(box.putBox(frame,weights)[0], 483);
 }

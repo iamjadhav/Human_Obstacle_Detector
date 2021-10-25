@@ -23,12 +23,11 @@ TEST(TransformTest, check_Robot_Transform){
   Distance testDist;
   std::vector<Eigen::Vector4d> result;
   std::vector<std::vector<double>> testVector= {{0,3,1}};
-  result = testDist.camToRobotTransform(testVector);
   // 1 5 1 1
-  EXPECT_EQ(result[0][0], 1);
-  EXPECT_EQ(result[0][1], 5);
-  EXPECT_EQ(result[0][2], 1);
-  EXPECT_EQ(result[0][3], 1);
+  EXPECT_EQ(testDist.camToRobotTransform(testVector)[0][0], 1);
+  EXPECT_EQ(testDist.camToRobotTransform(testVector)[0][1], 5);
+  EXPECT_EQ(testDist.camToRobotTransform(testVector)[0][2], 1);
+  EXPECT_EQ(testDist.camToRobotTransform(testVector)[0][3], 1);
 }
 
 TEST(xyCoordinatesTest, getXY){
@@ -38,18 +37,16 @@ TEST(xyCoordinatesTest, getXY){
   std::vector<cv::Rect> box;
   box.push_back(r);
   std::vector<std::vector<double>> world;
-  world = testDist.getXY(depth, box);
-  EXPECT_NEAR(world[0][0], 156.8938, 0.1);
-  EXPECT_NEAR(world[0][1], 47.4833, 0.1);
-  EXPECT_EQ(world[0][2], depth[0]);
+  EXPECT_NEAR(testDist.getXY(depth, box)[0][0], 156.8938, 0.1);
+  EXPECT_NEAR(testDist.getXY(depth, box)[0][1], 47.4833, 0.1);
+  EXPECT_EQ(testDist.getXY(depth, box)[0][2], depth[0]);
 }
 
 TEST(DepthTest, findDepth){
   Distance testDist;
   std::vector<double> box = {500};
   std::vector<double> depth;
-  depth = testDist.findDepth(box);
-  EXPECT_NEAR(depth[0],1440,0.1);
+  EXPECT_NEAR(testDist.findDepth(box)[0],1440,0.1);
 }
 
 TEST(DisplayLocation, checking_location){

@@ -36,6 +36,7 @@ int Data::getCamera(int mode) {
   cv::VideoCapture cap(mode);
     if (cap.isOpened() == false) {
       std::cout << "Camera cannot be opened! " << std::endl;
+      return 3;
     } else {
         while (true) {
             std::vector<std::vector<double>> coor;
@@ -70,8 +71,9 @@ int Data::getCamera(int mode) {
  * @param filePath Path to the video file
  * @return int
  */
-int Data::loadVideo(std::string filePath) {
+double Data::loadVideo(std::string filePath) {
   frame.release();
+  double locx;
   std::string frameInput = "video";
   cv::VideoCapture cap(filePath);
     if (cap.isOpened() == false) {
@@ -97,6 +99,7 @@ int Data::loadVideo(std::string filePath) {
           cv::imshow("Detected Humans", resizedFrame);
           cv::waitKey(1);
           char q = static_cast<char> (cv::waitKey(25));
+          locx = finalLocations[0][0]/1000;
           if (q == 27) {
             break;
           }
@@ -104,6 +107,7 @@ int Data::loadVideo(std::string filePath) {
       cap.release();
       cv::destroyAllWindows();
     }
+    return locx;
 }
 
 /**
