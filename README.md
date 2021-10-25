@@ -79,6 +79,7 @@ SOFTWARE.
 
 Please find the Phase-1 Overview here:
 - [Phase-1](https://youtu.be/lwNjuT5e-FM)
+- [Phase-2]![ezgif com-gif-maker](https://user-images.githubusercontent.com/35925489/138687478-1459cc24-4aad-42cc-9227-612790c5da71.gif)
 
 ## Known Issues/Bugs 
 
