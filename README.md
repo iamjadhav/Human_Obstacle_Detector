@@ -1,6 +1,6 @@
 ## Human_Obstacle_Detector
-[![Build Status](https://app.travis-ci.com/Abhishek-Nalawade/Human_Obstacle_Detector.svg?branch=development_sprint_2)](https://app.travis-ci.com/Abhishek-Nalawade/Human_Obstacle_Detector)
-[![Coverage Status](https://coveralls.io/repos/github/Abhishek-Nalawade/Human_Obstacle_Detector/badge.svg?branch=development_sprint_2)](https://coveralls.io/github/Abhishek-Nalawade/Human_Obstacle_Detector?branch=development_sprint_2)
+[![Build Status](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector.svg?branch=main)](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector)
+[![Coverage Status](https://coveralls.io/repos/github/iamjadhav/Human_Obstacle_Detector/badge.svg?branch=main)](https://coveralls.io/github/iamjadhav/Human_Obstacle_Detector?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ---
 
@@ -91,7 +91,7 @@ Phase-2 Output Demo:
 
 - Humans are assumed to be in upright position.
 - The average human height is assumed to be 175 cms (1.75 meters).
-- Assumed Pin Hole camera model
+- Assumed Pin Hole camera model and Perspective Transform.
 
 ## Known Issues/Bugs 
 
