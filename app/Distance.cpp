@@ -27,7 +27,7 @@ Distance::Distance() {}
 /**
  * @brief Transformation between camera and robot frame
  */
-int Distance::camToRobotTransform(std::vector<std::vector<double>> &camXYZ) {
+std::vector<Eigen::Vector4d> Distance::camToRobotTransform(std::vector<std::vector<double>> &camXYZ) {
   std::vector<Eigen::Vector4d> locations;
   Eigen::Matrix4d poseMatrix;
   poseMatrix << 1,0,0,1,
@@ -42,7 +42,7 @@ int Distance::camToRobotTransform(std::vector<std::vector<double>> &camXYZ) {
     robotXYZ << poseMatrix * xyz;
     locations.push_back(robotXYZ);
   }
-  return len;
+  return locations;
 }
 
 /**

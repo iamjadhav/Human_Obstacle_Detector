@@ -16,6 +16,7 @@
 #include <vector>
 #include <fstream>
 #include <opencv2/opencv.hpp>
+#include <Eigen/Dense>
 
 /**
  * @brief Distance class to provide the pixel to SI units conversion
@@ -25,7 +26,7 @@
 class Distance {
  public:
   Distance();
-  int camToRobotTransform(std::vector<std::vector<double>> &camXYZ);
+  std::vector<Eigen::Vector4d> camToRobotTransform(std::vector<std::vector<double>> &camXYZ);
   std::vector<double> findDepth(std::vector<double> &boxHeight);
   std::vector<std::vector<double>> getXY(std::vector<double> &depth, std::vector<cv::Rect> &r);
   void displayLocation();
