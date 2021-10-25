@@ -29,14 +29,11 @@ Distance::Distance() {}
  */
 std::vector<Eigen::Vector4d> Distance::camToRobotTransform(std::vector<std::vector<double>> &camXYZ) {
   std::vector<Eigen::Vector4d> locations;
-  Eigen::Matrix4d poseMatrix;
   poseMatrix << 1,0,0,1,
                 0,1,0,2,
                 0,0,1,0,
                 0,0,0,1;
-
   Eigen::Vector4d robotXYZ;
-
   for (std::vector<double> i : camXYZ){
     Eigen::Vector4d xyz(i[0],i[1],i[2],1);
     robotXYZ << poseMatrix * xyz;
@@ -52,9 +49,7 @@ std::vector<double> Distance::findDepth(std::vector<double> &boxHeight){
   std::vector<double> depth;
   double tempDepth;
   for (double i : boxHeight){
-    //std::cout << " i/2 :" << i/4 << std::endl;
     tempDepth = (perceivedFy * avgHumanHeight)/(i/4);
-    //std::cout<<""<<tempDepth << "\n";
     depth.push_back(tempDepth);
   }
   return depth;
