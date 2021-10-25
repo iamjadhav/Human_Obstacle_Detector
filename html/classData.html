@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Human_Obstacle_Detector: Data Class Reference</title>
+<title>Group 7: Human Obstacle Detector: Data Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Human_Obstacle_Detector
+   <div id="projectname">Group 7: Human Obstacle Detector
    </div>
   </td>
  </tr>
@@ -77,6 +77,7 @@ Collaboration diagram for Data:</div>
 <div class="center"><img src="classData__coll__graph.png" border="0" usemap="#Data_coll__map" alt="Collaboration graph"/></div>
 <map name="Data_coll__map" id="Data_coll__map">
 <area shape="rect" id="node2" href="classDetect.html" title="Detect class uses a pre&#45;trained SVM model from openCV to detect humans in the input frames and return..." alt="" coords="5,5,67,32"/>
+<area shape="rect" id="node3" href="classDistance.html" title="Distance class to provide the pixel to SI units conversion as well as the Transformation between Came..." alt="" coords="127,5,201,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -89,12 +90,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a511184f11597e720b0bf96b9b4f89a0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classData.html#a511184f11597e720b0bf96b9b4f89a0b">getCamera</a> (int mode)</td></tr>
 <tr class="memdesc:a511184f11597e720b0bf96b9b4f89a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">To take the camera frames as input.  <a href="#a511184f11597e720b0bf96b9b4f89a0b">More...</a><br /></td></tr>
 <tr class="separator:a511184f11597e720b0bf96b9b4f89a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae02b7e6ada4f27a9edccc577e42bba99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classData.html#ae02b7e6ada4f27a9edccc577e42bba99">loadVideo</a> (std::string filePath)</td></tr>
-<tr class="memdesc:ae02b7e6ada4f27a9edccc577e42bba99"><td class="mdescLeft">&#160;</td><td class="mdescRight">To take frames from a video file as input frames.  <a href="#ae02b7e6ada4f27a9edccc577e42bba99">More...</a><br /></td></tr>
-<tr class="separator:ae02b7e6ada4f27a9edccc577e42bba99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9875eec4b1ee3fc18512e5721513d34e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classData.html#a9875eec4b1ee3fc18512e5721513d34e">loadVideo</a> (std::string filePath)</td></tr>
+<tr class="memdesc:a9875eec4b1ee3fc18512e5721513d34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">To take frames from a video file as input frames.  <a href="#a9875eec4b1ee3fc18512e5721513d34e">More...</a><br /></td></tr>
+<tr class="separator:a9875eec4b1ee3fc18512e5721513d34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8791dd62b1f57b4e4f2039e934ec7fdf"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classData.html#a8791dd62b1f57b4e4f2039e934ec7fdf">preProcessing</a> (const cv::Mat &amp;frame)</td></tr>
 <tr class="memdesc:a8791dd62b1f57b4e4f2039e934ec7fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">To resize and filter input images to operate on.  <a href="#a8791dd62b1f57b4e4f2039e934ec7fdf">More...</a><br /></td></tr>
 <tr class="separator:a8791dd62b1f57b4e4f2039e934ec7fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0eefc277a688a36ec7bef63e8807bc2"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classData.html#ab0eefc277a688a36ec7bef63e8807bc2">videoPreProcessing</a> (const cv::Mat &amp;frame)</td></tr>
+<tr class="memdesc:ab0eefc277a688a36ec7bef63e8807bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">To resize and filter input video frames to operate on.  <a href="#ab0eefc277a688a36ec7bef63e8807bc2">More...</a><br /></td></tr>
+<tr class="separator:ab0eefc277a688a36ec7bef63e8807bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab31956423290f0d62dcca47ab4d16dd"><td class="memItemLeft" align="right" valign="top"><a id="aab31956423290f0d62dcca47ab4d16dd"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classData.html#aab31956423290f0d62dcca47ab4d16dd">~Data</a> ()</td></tr>
 <tr class="memdesc:aab31956423290f0d62dcca47ab4d16dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classData.html" title="Data class includes methods to get the input data and a method to put bounging boxes around the detec...">Data</a>:: <a class="el" href="classData.html" title="Data class includes methods to get the input data and a method to put bounging boxes around the detec...">Data</a> object. <br /></td></tr>
@@ -102,6 +106,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:ae089cb20a02909129d8f055805d38f8e"><td class="memItemLeft" align="right" valign="top"><a id="ae089cb20a02909129d8f055805d38f8e"></a>
+<a class="el" href="classDistance.html">Distance</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dist</b></td></tr>
+<tr class="separator:ae089cb20a02909129d8f055805d38f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4b6fa81e2c1055e4a193bef4fd1b03c"><td class="memItemLeft" align="right" valign="top"><a id="aa4b6fa81e2c1055e4a193bef4fd1b03c"></a>
 <a class="el" href="classDetect.html">Detect</a>&#160;</td><td class="memItemRight" valign="bottom"><b>human_detector</b></td></tr>
 <tr class="separator:aa4b6fa81e2c1055e4a193bef4fd1b03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,14 +146,14 @@ cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><b>frame</b></td></tr
 
 </div>
 </div>
-<a id="ae02b7e6ada4f27a9edccc577e42bba99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae02b7e6ada4f27a9edccc577e42bba99">&#9670;&nbsp;</a></span>loadVideo()</h2>
+<a id="a9875eec4b1ee3fc18512e5721513d34e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9875eec4b1ee3fc18512e5721513d34e">&#9670;&nbsp;</a></span>loadVideo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Data::loadVideo </td>
+          <td class="memname">double Data::loadVideo </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>filePath</em></td><td>)</td>
@@ -162,7 +169,7 @@ cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><b>frame</b></td></tr
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
 </div>
 </div>
@@ -183,6 +190,33 @@ cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><b>frame</b></td></tr
 </div><div class="memdoc">
 
 <p>To resize and filter input images to operate on. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>: Frame to be preprocessed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cv::Mat </dd></dl>
+
+</div>
+</div>
+<a id="ab0eefc277a688a36ec7bef63e8807bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0eefc277a688a36ec7bef63e8807bc2">&#9670;&nbsp;</a></span>videoPreProcessing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat Data::videoPreProcessing </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>To resize and filter input video frames to operate on. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">frame</td><td>: Frame to be preprocessed </td></tr>

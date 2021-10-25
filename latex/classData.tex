@@ -16,7 +16,7 @@ Collaboration diagram for Data\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=176pt]{classData__coll__graph}
+\includegraphics[width=227pt]{classData__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -27,15 +27,20 @@ Collaboration diagram for Data\+:
 \begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classData}{Data}\+:\+: \hyperlink{classData}{Data} object. \end{DoxyCompactList}\item 
 int \hyperlink{classData_a511184f11597e720b0bf96b9b4f89a0b}{get\+Camera} (int mode)
 \begin{DoxyCompactList}\small\item\em To take the camera frames as input. \end{DoxyCompactList}\item 
-int \hyperlink{classData_ae02b7e6ada4f27a9edccc577e42bba99}{load\+Video} (std\+::string file\+Path)
+double \hyperlink{classData_a9875eec4b1ee3fc18512e5721513d34e}{load\+Video} (std\+::string file\+Path)
 \begin{DoxyCompactList}\small\item\em To take frames from a video file as input frames. \end{DoxyCompactList}\item 
 cv\+::\+Mat \hyperlink{classData_a8791dd62b1f57b4e4f2039e934ec7fdf}{pre\+Processing} (const cv\+::\+Mat \&frame)
 \begin{DoxyCompactList}\small\item\em To resize and filter input images to operate on. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classData_ab0eefc277a688a36ec7bef63e8807bc2}{video\+Pre\+Processing} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em To resize and filter input video frames to operate on. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classData_aab31956423290f0d62dcca47ab4d16dd}\label{classData_aab31956423290f0d62dcca47ab4d16dd}} 
 \hyperlink{classData_aab31956423290f0d62dcca47ab4d16dd}{$\sim$\+Data} ()
 \begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classData}{Data}\+:\+: \hyperlink{classData}{Data} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classData_ae089cb20a02909129d8f055805d38f8e}\label{classData_ae089cb20a02909129d8f055805d38f8e}} 
+\hyperlink{classDistance}{Distance} {\bfseries dist}
 \item 
 \mbox{\Hypertarget{classData_aa4b6fa81e2c1055e4a193bef4fd1b03c}\label{classData_aa4b6fa81e2c1055e4a193bef4fd1b03c}} 
 \hyperlink{classDetect}{Detect} {\bfseries human\+\_\+detector}
@@ -67,11 +72,11 @@ To take the camera frames as input.
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classData_ae02b7e6ada4f27a9edccc577e42bba99}\label{classData_ae02b7e6ada4f27a9edccc577e42bba99}} 
+\mbox{\Hypertarget{classData_a9875eec4b1ee3fc18512e5721513d34e}\label{classData_a9875eec4b1ee3fc18512e5721513d34e}} 
 \index{Data@{Data}!load\+Video@{load\+Video}}
 \index{load\+Video@{load\+Video}!Data@{Data}}
 \subsubsection{\texorpdfstring{load\+Video()}{loadVideo()}}
-{\footnotesize\ttfamily int Data\+::load\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double Data\+::load\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Path }\end{DoxyParamCaption})}
 
 
 
@@ -83,7 +88,7 @@ To take frames from a video file as input frames.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int 
+double 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classData_a8791dd62b1f57b4e4f2039e934ec7fdf}\label{classData_a8791dd62b1f57b4e4f2039e934ec7fdf}} 
 \index{Data@{Data}!pre\+Processing@{pre\+Processing}}
@@ -94,6 +99,24 @@ int
 
 
 To resize and filter input images to operate on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & \+: Frame to be preprocessed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cv\+::\+Mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classData_ab0eefc277a688a36ec7bef63e8807bc2}\label{classData_ab0eefc277a688a36ec7bef63e8807bc2}} 
+\index{Data@{Data}!video\+Pre\+Processing@{video\+Pre\+Processing}}
+\index{video\+Pre\+Processing@{video\+Pre\+Processing}!Data@{Data}}
+\subsubsection{\texorpdfstring{video\+Pre\+Processing()}{videoPreProcessing()}}
+{\footnotesize\ttfamily cv\+::\+Mat Data\+::video\+Pre\+Processing (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{frame }\end{DoxyParamCaption})}
+
+
+
+To resize and filter input video frames to operate on. 
 
 
 \begin{DoxyParams}{Parameters}

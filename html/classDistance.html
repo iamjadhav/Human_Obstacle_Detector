@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Human_Obstacle_Detector: Distance Class Reference</title>
+<title>Group 7: Human Obstacle Detector: Distance Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Human_Obstacle_Detector
+   <div id="projectname">Group 7: Human Obstacle Detector
    </div>
   </td>
  </tr>
@@ -77,14 +77,18 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#a10c71cb57a2a8f5c66b2e91f63e3595a">Distance</a> ()</td></tr>
 <tr class="memdesc:a10c71cb57a2a8f5c66b2e91f63e3595a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classDetect.html" title="Detect class uses a pre-trained SVM model from openCV to detect humans in the input frames and return...">Detect</a>:: <a class="el" href="classDetect.html" title="Detect class uses a pre-trained SVM model from openCV to detect humans in the input frames and return...">Detect</a> object. <br /></td></tr>
 <tr class="separator:a10c71cb57a2a8f5c66b2e91f63e3595a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6d9ac2a81e7e3594a62ab46fa049093"><td class="memItemLeft" align="right" valign="top"><a id="ac6d9ac2a81e7e3594a62ab46fa049093"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#ac6d9ac2a81e7e3594a62ab46fa049093">camToRobotTransform</a> ()</td></tr>
-<tr class="memdesc:ac6d9ac2a81e7e3594a62ab46fa049093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transformation between camera and robot frame. <br /></td></tr>
-<tr class="separator:ac6d9ac2a81e7e3594a62ab46fa049093"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa11922ad85f7cdd6611a23d87840e7fb"><td class="memItemLeft" align="right" valign="top"><a id="aa11922ad85f7cdd6611a23d87840e7fb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#aa11922ad85f7cdd6611a23d87840e7fb">displayLocation</a> ()</td></tr>
-<tr class="memdesc:aa11922ad85f7cdd6611a23d87840e7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">To display the location of detected humans on-screen. <br /></td></tr>
-<tr class="separator:aa11922ad85f7cdd6611a23d87840e7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96e37550dbd02a7ab2b3373068031198"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::Vector4d &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#a96e37550dbd02a7ab2b3373068031198">camToRobotTransform</a> (std::vector&lt; std::vector&lt; double &gt;&gt; &amp;camXYZ)</td></tr>
+<tr class="memdesc:a96e37550dbd02a7ab2b3373068031198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transformation between camera and robot frame.  <a href="#a96e37550dbd02a7ab2b3373068031198">More...</a><br /></td></tr>
+<tr class="separator:a96e37550dbd02a7ab2b3373068031198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9371ccc57f5038e09c65f15f7094b5b5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#a9371ccc57f5038e09c65f15f7094b5b5">findDepth</a> (std::vector&lt; double &gt; &amp;boxHeight)</td></tr>
+<tr class="memdesc:a9371ccc57f5038e09c65f15f7094b5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds depth of the detected humans.  <a href="#a9371ccc57f5038e09c65f15f7094b5b5">More...</a><br /></td></tr>
+<tr class="separator:a9371ccc57f5038e09c65f15f7094b5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55adbc3ca34cb0c56237c84259305f5e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#a55adbc3ca34cb0c56237c84259305f5e">getXY</a> (std::vector&lt; double &gt; &amp;depth, std::vector&lt; cv::Rect &gt; &amp;r)</td></tr>
+<tr class="memdesc:a55adbc3ca34cb0c56237c84259305f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the X and Y coordinates w.r.t camera frame.  <a href="#a55adbc3ca34cb0c56237c84259305f5e">More...</a><br /></td></tr>
+<tr class="separator:a55adbc3ca34cb0c56237c84259305f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08964f47af73ec94f0ce46c29ceec36f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#a08964f47af73ec94f0ce46c29ceec36f">displayLocation</a> (std::vector&lt; Eigen::Vector4d &gt; &amp;locations, std::string &amp;frameInput)</td></tr>
+<tr class="memdesc:a08964f47af73ec94f0ce46c29ceec36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">To display the location of detected humans on-screen.  <a href="#a08964f47af73ec94f0ce46c29ceec36f">More...</a><br /></td></tr>
+<tr class="separator:a08964f47af73ec94f0ce46c29ceec36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a933d4ecca7e420ac53945e36d64e9500"><td class="memItemLeft" align="right" valign="top"><a id="a933d4ecca7e420ac53945e36d64e9500"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDistance.html#a933d4ecca7e420ac53945e36d64e9500">~Distance</a> ()</td></tr>
 <tr class="memdesc:a933d4ecca7e420ac53945e36d64e9500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classDistance.html" title="Distance class to provide the pixel to SI units conversion as well as the Transformation between Came...">Distance</a>:: <a class="el" href="classDistance.html" title="Distance class to provide the pixel to SI units conversion as well as the Transformation between Came...">Distance</a> object. <br /></td></tr>
@@ -92,7 +96,138 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classDistance.html" title="Distance class to provide the pixel to SI units conversion as well as the Transformation between Came...">Distance</a> class to provide the pixel to SI units conversion as well as the Transformation between Camera frame and Robot frame. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a96e37550dbd02a7ab2b3373068031198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96e37550dbd02a7ab2b3373068031198">&#9670;&nbsp;</a></span>camToRobotTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Eigen::Vector4d &gt; Distance::camToRobotTransform </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>camXYZ</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transformation between camera and robot frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camXYZ</td><td>: Camera frame X Y coordinates </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Eigen::Vector4d&gt; : </dd></dl>
+
+</div>
+</div>
+<a id="a08964f47af73ec94f0ce46c29ceec36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08964f47af73ec94f0ce46c29ceec36f">&#9670;&nbsp;</a></span>displayLocation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Distance::displayLocation </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; Eigen::Vector4d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>locations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>frameInput</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>To display the location of detected humans on-screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">locations</td><td>: contians human locations in robot reference frame </td></tr>
+    <tr><td class="paramname">frameInput</td><td>: contians the name of input type eg camera or video </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int : </dd></dl>
+
+</div>
+</div>
+<a id="a9371ccc57f5038e09c65f15f7094b5b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9371ccc57f5038e09c65f15f7094b5b5">&#9670;&nbsp;</a></span>findDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; Distance::findDepth </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>boxHeight</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds depth of the detected humans. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boxHeight</td><td>: contains the heights of all detected boxes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; : </dd></dl>
+
+</div>
+</div>
+<a id="a55adbc3ca34cb0c56237c84259305f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55adbc3ca34cb0c56237c84259305f5e">&#9670;&nbsp;</a></span>getXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; Distance::getXY </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; cv::Rect &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the X and Y coordinates w.r.t camera frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">depth</td><td>: contains the estimated depth of detected humans </td></tr>
+    <tr><td class="paramname">r</td><td>: contains the detected boxes of humans </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::vector&lt;double&gt;&gt; : </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="Distance_8hpp_source.html">Distance.hpp</a></li>
 <li>app/<a class="el" href="Distance_8cpp.html">Distance.cpp</a></li>
 </ul>

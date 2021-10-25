@@ -1,6 +1,6 @@
 ## Human_Obstacle_Detector
-[![Build Status](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector.svg?branch=development_sprint_1)](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector)
-[![Coverage Status](https://coveralls.io/repos/github/iamjadhav/Human_Obstacle_Detector/badge.svg?branch=development_sprint_1)](https://coveralls.io/github/iamjadhav/Human_Obstacle_Detector?branch=development_sprint_1)
+[![Build Status](https://app.travis-ci.com/Abhishek-Nalawade/Human_Obstacle_Detector.svg?branch=feature_one)](https://app.travis-ci.com/Abhishek-Nalawade/Human_Obstacle_Detector)
+[![Coverage Status](https://coveralls.io/repos/github/Abhishek-Nalawade/Human_Obstacle_Detector/badge.svg?branch=feature_one)](https://coveralls.io/github/Abhishek-Nalawade/Human_Obstacle_Detector?branch=feature_one)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ---
 
@@ -38,6 +38,7 @@ We will plan the work in Sprints and switch between the roles of driver and navi
 * Ubuntu 18.04 LTS
 * Modern C++ Programming Language
 * OpenCV Library
+* Eigen Library
 * CMake Build System
 * Doxygen
 
@@ -78,6 +79,7 @@ SOFTWARE.
 
 Please find the Phase-1 Overview here:
 - [Phase-1](https://youtu.be/lwNjuT5e-FM)
+- [Phase-2]![ezgif com-gif-maker](https://user-images.githubusercontent.com/35925489/138687478-1459cc24-4aad-42cc-9227-612790c5da71.gif)
 
 ## Known Issues/Bugs 
 

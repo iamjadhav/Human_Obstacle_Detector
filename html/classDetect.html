@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Human_Obstacle_Detector: Detect Class Reference</title>
+<title>Group 7: Human Obstacle Detector: Detect Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Human_Obstacle_Detector
+   <div id="projectname">Group 7: Human Obstacle Detector
    </div>
   </td>
  </tr>
@@ -78,12 +78,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetect.html#afefa427dddf8e308f93fd49424cc3680">Detect</a> ()</td></tr>
 <tr class="memdesc:afefa427dddf8e308f93fd49424cc3680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classDetect.html" title="Detect class uses a pre-trained SVM model from openCV to detect humans in the input frames and return...">Detect</a>:: <a class="el" href="classDetect.html" title="Detect class uses a pre-trained SVM model from openCV to detect humans in the input frames and return...">Detect</a> object. <br /></td></tr>
 <tr class="separator:afefa427dddf8e308f93fd49424cc3680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a178c6c5220c2726f0adc6aa464dff543"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetect.html#a178c6c5220c2726f0adc6aa464dff543">detectHuman</a> (cv::Mat &amp;input_frame)</td></tr>
-<tr class="memdesc:a178c6c5220c2726f0adc6aa464dff543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to detect humans in input frames.  <a href="#a178c6c5220c2726f0adc6aa464dff543">More...</a><br /></td></tr>
-<tr class="separator:a178c6c5220c2726f0adc6aa464dff543"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46940b188132ade41fede81831144f00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetect.html#a46940b188132ade41fede81831144f00">putBox</a> (cv::Mat &amp;input_frame)</td></tr>
-<tr class="memdesc:a46940b188132ade41fede81831144f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to draw bouding boxes around detected humans.  <a href="#a46940b188132ade41fede81831144f00">More...</a><br /></td></tr>
-<tr class="separator:a46940b188132ade41fede81831144f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a27975d3aeb0ef43042106554fccb07"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetect.html#a7a27975d3aeb0ef43042106554fccb07">detectHuman</a> (cv::Mat &amp;input_frame)</td></tr>
+<tr class="memdesc:a7a27975d3aeb0ef43042106554fccb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to detect humans in input frames.  <a href="#a7a27975d3aeb0ef43042106554fccb07">More...</a><br /></td></tr>
+<tr class="separator:a7a27975d3aeb0ef43042106554fccb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c037bd61725af5ec53beadcb4f58d0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetect.html#a67c037bd61725af5ec53beadcb4f58d0">putBox</a> (cv::Mat &amp;input_frame, std::vector&lt; double &gt; &amp;weights)</td></tr>
+<tr class="memdesc:a67c037bd61725af5ec53beadcb4f58d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to draw bouding boxes around detected humans.  <a href="#a67c037bd61725af5ec53beadcb4f58d0">More...</a><br /></td></tr>
+<tr class="separator:a67c037bd61725af5ec53beadcb4f58d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa808b1146b9b8db316b25b02f0a6b5f3"><td class="memItemLeft" align="right" valign="top"><a id="aa808b1146b9b8db316b25b02f0a6b5f3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetect.html#aa808b1146b9b8db316b25b02f0a6b5f3">~Detect</a> ()</td></tr>
 <tr class="memdesc:aa808b1146b9b8db316b25b02f0a6b5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classDetect.html" title="Detect class uses a pre-trained SVM model from openCV to detect humans in the input frames and return...">Detect</a>:: <a class="el" href="classDetect.html" title="Detect class uses a pre-trained SVM model from openCV to detect humans in the input frames and return...">Detect</a> object. <br /></td></tr>
@@ -91,6 +91,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a26e995ab3b691ebf5f2ba2040aede421"><td class="memItemLeft" align="right" valign="top"><a id="a26e995ab3b691ebf5f2ba2040aede421"></a>
+std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>box_coordinates</b></td></tr>
+<tr class="separator:a26e995ab3b691ebf5f2ba2040aede421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b4db15c556678a0f8e7ec1f925bd79d"><td class="memItemLeft" align="right" valign="top"><a id="a7b4db15c556678a0f8e7ec1f925bd79d"></a>
 cv::HOGDescriptor&#160;</td><td class="memItemRight" valign="bottom"><b>HOG</b></td></tr>
 <tr class="separator:a7b4db15c556678a0f8e7ec1f925bd79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,14 +101,14 @@ cv::HOGDescriptor&#160;</td><td class="memItemRight" valign="bottom"><b>HOG</b><
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classDetect.html" title="Detect class uses a pre-trained SVM model from openCV to detect humans in the input frames and return...">Detect</a> class uses a pre-trained SVM model from openCV to detect humans in the input frames and return bounding box co-ordinates. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a178c6c5220c2726f0adc6aa464dff543"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a178c6c5220c2726f0adc6aa464dff543">&#9670;&nbsp;</a></span>detectHuman()</h2>
+<a id="a7a27975d3aeb0ef43042106554fccb07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a27975d3aeb0ef43042106554fccb07">&#9670;&nbsp;</a></span>detectHuman()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Detect::detectHuman </td>
+          <td class="memname">std::vector&lt; double &gt; Detect::detectHuman </td>
           <td>(</td>
           <td class="paramtype">cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>input_frame</em></td><td>)</td>
@@ -117,25 +120,36 @@ cv::HOGDescriptor&#160;</td><td class="memItemRight" valign="bottom"><b>HOG</b><
 <p>Method to detect humans in input frames. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input_frame</td><td></td></tr>
+    <tr><td class="paramname">input_frame</td><td>:Frame to detect humans </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; </dd></dl>
 
 </div>
 </div>
-<a id="a46940b188132ade41fede81831144f00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46940b188132ade41fede81831144f00">&#9670;&nbsp;</a></span>putBox()</h2>
+<a id="a67c037bd61725af5ec53beadcb4f58d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c037bd61725af5ec53beadcb4f58d0">&#9670;&nbsp;</a></span>putBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Detect::putBox </td>
+          <td class="memname">std::vector&lt; double &gt; Detect::putBox </td>
           <td>(</td>
           <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>input_frame</em></td><td>)</td>
+          <td class="paramname"><em>input_frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>weights</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -144,10 +158,11 @@ cv::HOGDescriptor&#160;</td><td class="memItemRight" valign="bottom"><b>HOG</b><
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input_frame</td><td>: Frame returned from detectHuman method </td></tr>
+    <tr><td class="paramname">weights</td><td>: Weights used in the classifier </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int : Bounding box size </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loadvideo',['loadVideo',['../classData.html#ae02b7e6ada4f27a9edccc577e42bba99',1,'Data']]]
+  ['getcamera',['getCamera',['../classData.html#a511184f11597e720b0bf96b9b4f89a0b',1,'Data']]],
+  ['getxy',['getXY',['../classDistance.html#a55adbc3ca34cb0c56237c84259305f5e',1,'Distance']]]
 ];
