@@ -32,7 +32,10 @@ TEST(Video, Data_Input_as_File_does_not_exist) {
   EXPECT_EQ(video.loadVideo(filePath), 3);
 }
 
-TEST(Video, Testing_Locations){
+/**
+ * @brief Construct a new TEST object
+ */
+TEST(Video, Testing_Locations) {
   Data location;
   EXPECT_NEAR(location.loadVideo("../testdata/5.mp4"), 0.914, 0.2);
 }

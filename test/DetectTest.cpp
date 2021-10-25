@@ -25,12 +25,15 @@ TEST(Detect_test, checking_detected_human) {
   EXPECT_EQ(det.detectHuman(frame).size(), 1);
 }
 
-TEST(Bounding_box_test, checking_height){
+/**
+ * @brief Construct a new TEST object 
+ */
+TEST(Bounding_box_test, checking_height) {
   Detect box;
   cv::Mat frame;
   std::vector<double> heights;
   std::vector<double> weights;
   frame = cv::imread("../testdata/box_test.jpg");
   weights = box.detectHuman(frame);
-  EXPECT_EQ(box.putBox(frame,weights)[0], 483);
+  EXPECT_EQ(box.putBox(frame, weights)[0], 483);
 }
