@@ -48,6 +48,7 @@ int Data::getCamera(int mode) {
             for (int i=0; i<coor.size();i++){
               std::cout << "X " << coor[i][0]<<" Y " << coor[i][1]<<" Z " <<coor[i][2] <<"\n";
               }
+            dist.camToRobotTransform(coor);
             cv::imshow("Detected Humans", resizedFrame);
             cv::waitKey(1);
             char q = static_cast<char> (cv::waitKey(25));
