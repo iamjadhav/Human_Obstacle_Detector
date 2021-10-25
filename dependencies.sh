@@ -13,6 +13,11 @@ sudo apt-get install libvorbis-dev libxvidcore-dev
 sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev
 sudo apt-get install x264 v4l-utils
 
+## Install Eigen
+sudo apt install libeigen3-dev
+sudo apt-get install -qq g++-7
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
+
 ## Install opencv
 git clone https://github.com/opencv/opencv.git
 cd opencv 
