@@ -29,8 +29,8 @@ TEST(Camera, Data_Input_Method_camera_works) {
  */
 TEST(Video, Data_Input_as_File_does_not_exist) {
   Data video;
-  std::string filename;
-  EXPECT_EQ(video.frame.empty(), 1);
+  std::string filePath = "../67.webm";
+  EXPECT_EQ(video.loadVideo(filePath), 3);
 }
 
 /**

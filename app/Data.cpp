@@ -76,6 +76,7 @@ int Data::loadVideo(std::string filePath) {
   cv::VideoCapture cap(filePath);
     if (cap.isOpened() == false) {
       std::cout << "Video File cannot be opened! " << std::endl;
+      return 3;
     } else {
         while (true) {
           std::vector<std::vector<double>> coor;
