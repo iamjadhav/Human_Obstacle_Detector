@@ -15,15 +15,18 @@
 \mbox{\Hypertarget{classDetect_afefa427dddf8e308f93fd49424cc3680}\label{classDetect_afefa427dddf8e308f93fd49424cc3680}} 
 \hyperlink{classDetect_afefa427dddf8e308f93fd49424cc3680}{Detect} ()
 \begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classDetect}{Detect}\+:\+: \hyperlink{classDetect}{Detect} object. \end{DoxyCompactList}\item 
-void \hyperlink{classDetect_a178c6c5220c2726f0adc6aa464dff543}{detect\+Human} (cv\+::\+Mat \&input\+\_\+frame)
+std\+::vector$<$ double $>$ \hyperlink{classDetect_a7a27975d3aeb0ef43042106554fccb07}{detect\+Human} (cv\+::\+Mat \&input\+\_\+frame)
 \begin{DoxyCompactList}\small\item\em Method to detect humans in input frames. \end{DoxyCompactList}\item 
-int \hyperlink{classDetect_a46940b188132ade41fede81831144f00}{put\+Box} (cv\+::\+Mat \&input\+\_\+frame)
+std\+::vector$<$ double $>$ \hyperlink{classDetect_a67c037bd61725af5ec53beadcb4f58d0}{put\+Box} (cv\+::\+Mat \&input\+\_\+frame, std\+::vector$<$ double $>$ \&weights)
 \begin{DoxyCompactList}\small\item\em Method to draw bouding boxes around detected humans. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classDetect_aa808b1146b9b8db316b25b02f0a6b5f3}\label{classDetect_aa808b1146b9b8db316b25b02f0a6b5f3}} 
 \hyperlink{classDetect_aa808b1146b9b8db316b25b02f0a6b5f3}{$\sim$\+Detect} ()
 \begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classDetect}{Detect}\+:\+: \hyperlink{classDetect}{Detect} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDetect_a26e995ab3b691ebf5f2ba2040aede421}\label{classDetect_a26e995ab3b691ebf5f2ba2040aede421}} 
+std\+::vector$<$ cv\+::\+Rect $>$ {\bfseries box\+\_\+coordinates}
 \item 
 \mbox{\Hypertarget{classDetect_a7b4db15c556678a0f8e7ec1f925bd79d}\label{classDetect_a7b4db15c556678a0f8e7ec1f925bd79d}} 
 cv\+::\+H\+O\+G\+Descriptor {\bfseries H\+OG}
@@ -34,11 +37,11 @@ cv\+::\+H\+O\+G\+Descriptor {\bfseries H\+OG}
 \hyperlink{classDetect}{Detect} class uses a pre-\/trained S\+VM model from open\+CV to detect humans in the input frames and return bounding box co-\/ordinates. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classDetect_a178c6c5220c2726f0adc6aa464dff543}\label{classDetect_a178c6c5220c2726f0adc6aa464dff543}} 
+\mbox{\Hypertarget{classDetect_a7a27975d3aeb0ef43042106554fccb07}\label{classDetect_a7a27975d3aeb0ef43042106554fccb07}} 
 \index{Detect@{Detect}!detect\+Human@{detect\+Human}}
 \index{detect\+Human@{detect\+Human}!Detect@{Detect}}
 \subsubsection{\texorpdfstring{detect\+Human()}{detectHuman()}}
-{\footnotesize\ttfamily void Detect\+::detect\+Human (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input\+\_\+frame }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Detect\+::detect\+Human (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input\+\_\+frame }\end{DoxyParamCaption})}
 
 
 
@@ -46,14 +49,17 @@ Method to detect humans in input frames.
 
 
 \begin{DoxyParams}{Parameters}
-{\em input\+\_\+frame} & \\
+{\em input\+\_\+frame} & \+:Frame to detect humans \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classDetect_a46940b188132ade41fede81831144f00}\label{classDetect_a46940b188132ade41fede81831144f00}} 
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDetect_a67c037bd61725af5ec53beadcb4f58d0}\label{classDetect_a67c037bd61725af5ec53beadcb4f58d0}} 
 \index{Detect@{Detect}!put\+Box@{put\+Box}}
 \index{put\+Box@{put\+Box}!Detect@{Detect}}
 \subsubsection{\texorpdfstring{put\+Box()}{putBox()}}
-{\footnotesize\ttfamily int Detect\+::put\+Box (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input\+\_\+frame }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Detect\+::put\+Box (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input\+\_\+frame,  }\item[{std\+::vector$<$ double $>$ \&}]{weights }\end{DoxyParamCaption})}
 
 
 
@@ -63,9 +69,11 @@ Method to draw bouding boxes around detected humans.
 \begin{DoxyParams}{Parameters}
 {\em input\+\_\+frame} & \+: Frame returned from detect\+Human method \\
 \hline
+{\em weights} & \+: Weights used in the classifier \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int \+: Bounding box size 
+std\+::vector$<$double$>$ 
 \end{DoxyReturn}
 
 
