@@ -33,8 +33,6 @@ class Distance {
   ~Distance();
 
  private:
-  std::vector<double> pixelLocation;
-  double fov = 19.2306;
   double avgHumanHeight = 175;
   double perceivedFy = 1028.57143;
   double perceivedFx = 1386.67;

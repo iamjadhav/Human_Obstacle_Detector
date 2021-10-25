@@ -12,9 +12,9 @@
 
 #pragma once
 
-#include "../include/Distance.hpp"
 #include <string>
 #include <fstream>
+#include "../include/Distance.hpp"
 #include "../include/Detect.hpp"
 #include <opencv2/opencv.hpp>
 
@@ -22,6 +22,7 @@
  * @brief Data class includes methods to get the input data
  *        and a method to put bounging boxes around the
  *        detected humans.
+ * 
  */
 class Data {
  public:
