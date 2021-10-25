@@ -14,7 +14,7 @@
 
 #include <string>
 #include <vector>
-#include <fstream>
+#include <iostream>
 #include <opencv2/opencv.hpp>
 
 /**
@@ -27,9 +27,9 @@ class Detect {
   std::vector<cv::Rect> box_coordinates;
   cv::HOGDescriptor HOG;
   std::vector<double> detectHuman(cv::Mat &input_frame);
-  std::vector<double> putBox(cv::Mat &input_frame, std::vector<double> &weights);
+  std::vector<double> putBox(cv::Mat &input_frame,
+                              std::vector<double> &weights);
   ~Detect();
 
  private:
-
 };
