@@ -87,6 +87,10 @@ Phase-2 Output Demo:
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/35925489/138687478-1459cc24-4aad-42cc-9227-612790c5da71.gif)
 
+Phase-2 Final Overview:
+
+- [Phase-2 Overview](https://youtu.be/G9Qp9nsc6AY)
+
 ## Set of Assumptions 
 
 - Humans are assumed to be in upright position.
@@ -133,3 +137,5 @@ Sprint Planning Sheet--> [Link](https://docs.google.com/document/d/1Xaz2rZ7OrmSh
 Phase-1 Overview --> [Link](https://youtu.be/lwNjuT5e-FM)
 
 Proposal --> [Link](https://youtu.be/2ptUw7MpsMc)
+
+Final Output and Overview --> [Link](https://youtu.be/G9Qp9nsc6AY)
