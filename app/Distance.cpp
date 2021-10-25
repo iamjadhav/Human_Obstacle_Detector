@@ -17,6 +17,7 @@
 #include <string>
 #include <fstream>
 #include <opencv2/opencv.hpp>
+#include <Eigen/Dense>
 
 /**
  * @brief Construct a new Detect:: Detect object
