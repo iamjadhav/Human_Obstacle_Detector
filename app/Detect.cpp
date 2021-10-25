@@ -46,7 +46,7 @@ std::vector<double> Detect::putBox(cv::Mat &input_frame, std::vector<double> &we
     cv::Rect r = box_coordinates[i];
     cv::rectangle(input_frame, r, cv::Scalar(0, 0, 255), 3);
     std::stringstream temp;
-    temp << weights[i];
+    temp << i + 1;
     cv::putText(input_frame, temp.str(), cv::Point(r.x, r.y+50),
                 cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255) );
     heights.push_back(r.height);
