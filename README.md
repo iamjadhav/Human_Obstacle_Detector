@@ -91,6 +91,7 @@ Phase-2 Output Demo:
 
 - Humans are assumed to be in upright position.
 - The average human height is assumed to be 175 cms (1.75 meters).
+- Assumed Pin Hole camera model
 
 ## Known Issues/Bugs 
 
