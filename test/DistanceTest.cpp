@@ -11,6 +11,7 @@
  */
 
 #include <gtest/gtest.h>
+#include <string>
 #include "../include/Distance.hpp"
 #include <opencv2/opencv.hpp>
 #include <Eigen/Dense>
@@ -18,11 +19,6 @@
 /**
  * @brief Test to verify if the correct tranformation is applied.
  */
-// TEST(SIDistance, Tranform_check) {
-//   Distance dist;
-//   EXPECT_EQ(dist.camToRobotTransform(), 4);
-// }
-
 TEST(TransformTest, check_Robot_Transform){
   Distance testDist;
   std::vector<Eigen::Vector4d> result;
@@ -50,6 +46,17 @@ TEST(xyCoordinatesTest, getXY){
 
 TEST(DepthTest, findDepth){
   Distance testDist;
-  std::vector<double> box = {50};
-  
+  std::vector<double> box = {500};
+  std::vector<double> depth;
+  depth = testDist.findDepth(box);
+  EXPECT_NEAR(depth[0],1440,0.1);
+}
+
+TEST(DisplayLocation, checking_location){
+  Eigen::Vector4d loc(1.6, 0.8, 3.6, 1);
+  std::vector<Eigen::Vector4d> locations;
+  locations.push_back(loc);
+  std::string frameInput = "camera";
+  Distance testDist;
+  EXPECT_EQ(testDist.displayLocation(locations, frameInput),1);
 }

@@ -29,7 +29,7 @@ class Distance {
   std::vector<Eigen::Vector4d> camToRobotTransform(std::vector<std::vector<double>> &camXYZ);
   std::vector<double> findDepth(std::vector<double> &boxHeight);
   std::vector<std::vector<double>> getXY(std::vector<double> &depth, std::vector<cv::Rect> &r);
-  void displayLocation(std::vector<Eigen::Vector4d> &locations, std::string frameInput);
+  int displayLocation(std::vector<Eigen::Vector4d> &locations, std::string frameInput);
   ~Distance();
 
  private:

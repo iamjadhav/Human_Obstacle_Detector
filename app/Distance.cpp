@@ -82,23 +82,24 @@ std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std
 /**
  * @brief To display the location of detected humans on-screen.
  */
-void Distance::displayLocation(std::vector<Eigen::Vector4d> &locations, std::string frameInput) {
-  int j = 0;
+int Distance::displayLocation(std::vector<Eigen::Vector4d> &locations, std::string frameInput) {
+  int id = 0;
   for(Eigen::Vector4d i: locations){
     if (frameInput == "camera"){
-      std::cout << "Detected human [" << j+1 << "] is located at (meters) \n"
+      std::cout << "Detected human [" << id+1 << "] is located at (meters) \n"
                 <<"X: " << std::setprecision(3) << i[0]/100 <<" Y: "<<
                  std::setprecision(3) << i[1]/100 <<" Depth: " <<
                  std::setprecision(3) << i[2]/100 << "\n\n";
     } else if (frameInput == "video"){
-      std::cout << "Detected human [" << j+1 << "] is located at (meters) \n"
+      std::cout << "Detected human [" << id+1 << "] is located at (meters) \n"
                 <<"X: " << std::setprecision(3) << i[0]/1000 <<" Y: "<<
                  std::setprecision(3) << i[1]/1000 <<" Depth: " <<
                  std::setprecision(3) << i[2]/1000 << "\n\n";
     }
-    j++;
+    id++;
 
   }
+  return id;
 }
 
 /**
