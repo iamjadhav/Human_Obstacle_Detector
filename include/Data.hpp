@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include <Eigen/Dense>
 #include <string>
 #include <iostream>
 #include "../include/Distance.hpp"

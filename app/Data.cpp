@@ -10,14 +10,7 @@
  *
  */
 
-#pragma once
-
-#include <Eigen/Dense>
-#include <iostream>
-#include <string>
 #include "../include/Data.hpp"
-#include "../include/Detect.hpp"
-#include <opencv2/opencv.hpp>
 
 /**
  * @brief Construct a new Data:: Data object
@@ -42,13 +35,12 @@ int Data::getCamera(int mode) {
             std::vector<Eigen::Vector4d> finalLocations;
             std::vector<double> heights;
             std::vector<double> depths;
-            std::vector<double> temp;
             cap >> frame;
             if (frame.empty())
               break;
             resizedFrame = preProcessing(frame);
-            temp = human_detector.detectHuman(resizedFrame);
-            heights = human_detector.putBox(resizedFrame, temp);
+            human_detector.detectHuman(resizedFrame);
+            heights = human_detector.putBox(resizedFrame);
             depths = dist.findDepth(heights);
             coor = dist.getXY(depths, human_detector.box_coordinates);
             finalLocations = dist.camToRobotTransform(coor);
@@ -63,6 +55,7 @@ int Data::getCamera(int mode) {
       cap.release();
       cv::destroyAllWindows();
     }
+    return 1;
 }
 
 /**
@@ -84,13 +77,12 @@ double Data::loadVideo(std::string filePath) {
           std::vector<Eigen::Vector4d> finalLocations;
           std::vector<double> heights;
           std::vector<double> depths;
-          std::vector<double> temp;
           cap >> frame;
           if (frame.empty())
             break;
           resizedFrame = videoPreProcessing(frame);
-          temp = human_detector.detectHuman(resizedFrame);
-          heights = human_detector.putBox(resizedFrame, temp);
+          human_detector.detectHuman(resizedFrame);
+          heights = human_detector.putBox(resizedFrame);
           depths = dist.findDepth(heights);
           coor = dist.getXY(depths, human_detector.box_coordinates);
           finalLocations = dist.camToRobotTransform(coor);

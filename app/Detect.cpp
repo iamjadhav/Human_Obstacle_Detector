@@ -10,13 +10,8 @@
  *
  */
 
-#pragma once
 
 #include "../include/Detect.hpp"
-#include <iostream>
-#include <vector>
-#include <string>
-#include <opencv2/opencv.hpp>
 
 /**
  * @brief Construct a new Detect:: Detect object
@@ -41,8 +36,7 @@ std::vector<double> Detect::detectHuman(cv::Mat &input_frame) {
  * @param weights : Weights used in the classifier
  * @return std::vector<double>
  */
-std::vector<double> Detect::putBox(cv::Mat &input_frame,
-                                    std::vector<double> &weights) {
+std::vector<double> Detect::putBox(cv::Mat &input_frame) {
   std::vector<double> heights;
   for ( size_t i = 0; i < box_coordinates.size(); i++ ) {
     cv::Rect r = box_coordinates[i];

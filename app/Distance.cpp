@@ -10,13 +10,7 @@
  *
  */
 
-#pragma once
-
-#include <Eigen/Dense>
-#include <iostream>
-#include <string>
 #include "../include/Distance.hpp"
-#include <opencv2/opencv.hpp>
 
 
 /**

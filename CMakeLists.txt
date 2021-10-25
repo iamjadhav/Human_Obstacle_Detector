@@ -9,12 +9,6 @@ option(COVERAGE "Generate Coverage Data" OFF)
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
 
-message(STATUS "OpenCV library status:")
-message(STATUS "    config: ${OpenCV_DIR}")
-message(STATUS "    version: ${OpenCV_VERSION}")
-message(STATUS "    libraries: ${OpenCV_LIBS}")
-message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
-
 INCLUDE_DIRECTORIES(${EIGEN3_INCLUDE_DIR})
 
 if (COVERAGE)
