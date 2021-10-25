@@ -25,7 +25,7 @@
 class Distance {
  public:
   Distance();
-  int camToRobotTransform();
+  int camToRobotTransform(std::vector<std::vector<double>> &camXYZ);
   std::vector<double> findDepth(std::vector<double> &boxHeight);
   std::vector<std::vector<double>> getXY(std::vector<double> &depth, std::vector<cv::Rect> &r);
   void displayLocation();
