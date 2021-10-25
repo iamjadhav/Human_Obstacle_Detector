@@ -1,6 +1,6 @@
 ## Human_Obstacle_Detector
-[![Build Status](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector.svg?branch=development_sprint_1)](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector)
-[![Coverage Status](https://coveralls.io/repos/github/iamjadhav/Human_Obstacle_Detector/badge.svg?branch=development_sprint_1)](https://coveralls.io/github/iamjadhav/Human_Obstacle_Detector?branch=development_sprint_1)
+[![Build Status](https://app.travis-ci.com/Abhishek-Nalawade/Human_Obstacle_Detector.svg?branch=development_sprint_2)](https://app.travis-ci.com/Abhishek-Nalawade/Human_Obstacle_Detector)
+[![Coverage Status](https://coveralls.io/repos/github/Abhishek-Nalawade/Human_Obstacle_Detector/badge.svg?branch=development_sprint_2)](https://coveralls.io/github/Abhishek-Nalawade/Human_Obstacle_Detector?branch=development_sprint_2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ---
 
@@ -38,6 +38,7 @@ We will plan the work in Sprints and switch between the roles of driver and navi
 * Ubuntu 18.04 LTS
 * Modern C++ Programming Language
 * OpenCV Library
+* Eigen Library
 * CMake Build System
 * Doxygen
 
@@ -76,13 +77,27 @@ SOFTWARE.
 
 ## Demos and Overviews
 
-Please find the Phase-1 Overview here:
+Phase-1 Demo:
+
 - [Phase-1](https://youtu.be/lwNjuT5e-FM)
+
+Phase-2 Output Demo:
+
+- [Phase-2](https://www.youtube.com/watch?v=CXsixNbqTj8)
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/35925489/138687478-1459cc24-4aad-42cc-9227-612790c5da71.gif)
+
+## Set of Assumptions 
+
+- Humans are assumed to be in upright position.
+- The average human height is assumed to be 175 cms (1.75 meters).
 
 ## Known Issues/Bugs 
 
 - Human Detection is not highly efficient; Unnecessary bounding boxes are drawn for detections other than humans.
 - Humans in an abnormal pose are not being detected.
+- Lighting Conditions need to be favourable for good detection.
+- Humans in upright positions are detected.
 
 ## Dependencies
 
