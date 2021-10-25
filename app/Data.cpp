@@ -32,6 +32,7 @@ Data::Data() {}
  */
 int Data::getCamera(int mode) {
   frame.release();
+  std::string frameInput = "camera";
   cv::VideoCapture cap(mode);
     if (cap.isOpened() == false) {
       std::cout << "Camera cannot be opened! " << std::endl;
@@ -43,13 +44,15 @@ int Data::getCamera(int mode) {
             std::vector<double> depths;
             std::vector<double> temp;
             cap >> frame;
+            if (frame.empty())
+              break;
             resizedFrame = preProcessing(frame);
             temp = human_detector.detectHuman(resizedFrame);
             heights = human_detector.putBox(resizedFrame,temp);
             depths = dist.findDepth(heights);
             coor = dist.getXY(depths, human_detector.box_coordinates);
             finalLocations = dist.camToRobotTransform(coor);
-            dist.displayLocation(finalLocations);
+            dist.displayLocation(finalLocations, frameInput);
             cv::imshow("Detected Humans", resizedFrame);
             cv::waitKey(1);
             char q = static_cast<char> (cv::waitKey(25));
@@ -69,6 +72,7 @@ int Data::getCamera(int mode) {
  */
 int Data::loadVideo(std::string filePath) {
   frame.release();
+  std::string frameInput = "video";
   cv::VideoCapture cap(filePath);
     if (cap.isOpened() == false) {
       std::cout << "Video File cannot be opened! " << std::endl;
@@ -80,13 +84,15 @@ int Data::loadVideo(std::string filePath) {
           std::vector<double> depths;
           std::vector<double> temp;
           cap >> frame;
+          if (frame.empty())
+            break;
           resizedFrame = videoPreProcessing(frame);
           temp = human_detector.detectHuman(resizedFrame);
           heights = human_detector.putBox(resizedFrame,temp);
           depths = dist.findDepth(heights);
           coor = dist.getXY(depths, human_detector.box_coordinates);
           finalLocations = dist.camToRobotTransform(coor);
-          dist.displayLocation(finalLocations);
+          dist.displayLocation(finalLocations, frameInput);
           cv::imshow("Detected Humans", resizedFrame);
           cv::waitKey(1);
           char q = static_cast<char> (cv::waitKey(25));
