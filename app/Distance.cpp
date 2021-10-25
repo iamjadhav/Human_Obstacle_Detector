@@ -90,8 +90,8 @@ std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std
 void Distance::displayLocation(std::vector<Eigen::Vector4d> &locations) {
   int j = 0;
   for(Eigen::Vector4d i: locations){
-    std::cout << "Detected human " <<j+1 << " is located at \n" << i.head(3)
-     <<"\n";
+    std::cout << "Detected human " << j+1 << " is located at (cms) \n"
+    << i.head(3) << "\n\n";
     j++;
   }
 }
