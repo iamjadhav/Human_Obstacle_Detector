@@ -7,8 +7,6 @@ add_executable(
     DataTest.cpp
     ../app/Detect.cpp
     DetectTest.cpp
-    ../app/Train.cpp
-    TrainTest.cpp
     ../app/Distance.cpp
     DistanceTest.cpp
 )

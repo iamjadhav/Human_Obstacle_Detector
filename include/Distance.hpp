@@ -38,5 +38,5 @@ class Distance {
   double avgHumanHeight = 175;
   double perceivedFy = 1028.57143;
   double perceivedFx = 1386.67;
-  cv::Mat rotationMat;
+  Eigen::Matrix4d poseMatrix;
 };
