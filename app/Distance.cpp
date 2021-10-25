@@ -88,9 +88,11 @@ std::vector<std::vector<double>> Distance::getXY(std::vector<double> &depth, std
  * @brief To display the location of detected humans on-screen.
  */
 void Distance::displayLocation(std::vector<Eigen::Vector4d> &locations) {
+  int j = 0;
   for(Eigen::Vector4d i: locations){
-    // i.resize(3);
-    std::cout << "Detected human is located at \n" << i.head(3) <<"\n";
+    std::cout << "Detected human " <<j+1 << " is located at \n" << i.head(3)
+     <<"\n";
+    j++;
   }
 }
 
