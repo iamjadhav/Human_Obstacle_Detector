@@ -1,4 +1,0 @@
-<map id="Data" name="Data">
-<area shape="rect" id="node2" href="$classDetect.html" title="Detect class uses a pre&#45;trained SVM model from openCV to detect humans in the input frames and return..." alt="" coords="5,5,67,32"/>
-<area shape="rect" id="node3" href="$classDistance.html" title="Distance class to provide the pixel to SI units conversion as well as the Transformation between Came..." alt="" coords="127,5,201,32"/>
-</map>

@@ -1,0 +1,134 @@
+\hypertarget{classData}{}\section{Data Class Reference}
+\label{classData}\index{Data@{Data}}
+
+
+\hyperlink{classData}{Data} class includes methods to get the input data and a method to put bounging boxes around the detected humans.  
+
+
+
+
+{\ttfamily \#include $<$Data.\+hpp$>$}
+
+
+
+Collaboration diagram for Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classData_af11f741cb7f587e2e495452a8905a22a}\label{classData_af11f741cb7f587e2e495452a8905a22a}} 
+\hyperlink{classData_af11f741cb7f587e2e495452a8905a22a}{Data} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classData}{Data}\+:\+: \hyperlink{classData}{Data} object. \end{DoxyCompactList}\item 
+int \hyperlink{classData_a511184f11597e720b0bf96b9b4f89a0b}{get\+Camera} (int mode)
+\begin{DoxyCompactList}\small\item\em To take the camera frames as input. \end{DoxyCompactList}\item 
+double \hyperlink{classData_a9875eec4b1ee3fc18512e5721513d34e}{load\+Video} (std\+::string file\+Path)
+\begin{DoxyCompactList}\small\item\em To take frames from a video file as input frames. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classData_a8791dd62b1f57b4e4f2039e934ec7fdf}{pre\+Processing} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em To resize and filter input images to operate on. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classData_ab0eefc277a688a36ec7bef63e8807bc2}{video\+Pre\+Processing} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em To resize and filter input video frames to operate on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classData_aab31956423290f0d62dcca47ab4d16dd}\label{classData_aab31956423290f0d62dcca47ab4d16dd}} 
+\hyperlink{classData_aab31956423290f0d62dcca47ab4d16dd}{$\sim$\+Data} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classData}{Data}\+:\+: \hyperlink{classData}{Data} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classData_ae089cb20a02909129d8f055805d38f8e}\label{classData_ae089cb20a02909129d8f055805d38f8e}} 
+\hyperlink{classDistance}{Distance} {\bfseries dist}
+\item 
+\mbox{\Hypertarget{classData_aa4b6fa81e2c1055e4a193bef4fd1b03c}\label{classData_aa4b6fa81e2c1055e4a193bef4fd1b03c}} 
+\hyperlink{classDetect}{Detect} {\bfseries human\+\_\+detector}
+\item 
+\mbox{\Hypertarget{classData_aba335c8ce9ac25fe621238c4c5d9acdb}\label{classData_aba335c8ce9ac25fe621238c4c5d9acdb}} 
+cv\+::\+Mat {\bfseries frame}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classData}{Data} class includes methods to get the input data and a method to put bounging boxes around the detected humans. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classData_a511184f11597e720b0bf96b9b4f89a0b}\label{classData_a511184f11597e720b0bf96b9b4f89a0b}} 
+\index{Data@{Data}!get\+Camera@{get\+Camera}}
+\index{get\+Camera@{get\+Camera}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\+Camera()}{getCamera()}}
+{\footnotesize\ttfamily int Data\+::get\+Camera (\begin{DoxyParamCaption}\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+To take the camera frames as input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & \+: Camera mode to view the camera or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classData_a9875eec4b1ee3fc18512e5721513d34e}\label{classData_a9875eec4b1ee3fc18512e5721513d34e}} 
+\index{Data@{Data}!load\+Video@{load\+Video}}
+\index{load\+Video@{load\+Video}!Data@{Data}}
+\subsubsection{\texorpdfstring{load\+Video()}{loadVideo()}}
+{\footnotesize\ttfamily double Data\+::load\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+To take frames from a video file as input frames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & Path to the video file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classData_a8791dd62b1f57b4e4f2039e934ec7fdf}\label{classData_a8791dd62b1f57b4e4f2039e934ec7fdf}} 
+\index{Data@{Data}!pre\+Processing@{pre\+Processing}}
+\index{pre\+Processing@{pre\+Processing}!Data@{Data}}
+\subsubsection{\texorpdfstring{pre\+Processing()}{preProcessing()}}
+{\footnotesize\ttfamily cv\+::\+Mat Data\+::pre\+Processing (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{frame }\end{DoxyParamCaption})}
+
+
+
+To resize and filter input images to operate on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & \+: Frame to be preprocessed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cv\+::\+Mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classData_ab0eefc277a688a36ec7bef63e8807bc2}\label{classData_ab0eefc277a688a36ec7bef63e8807bc2}} 
+\index{Data@{Data}!video\+Pre\+Processing@{video\+Pre\+Processing}}
+\index{video\+Pre\+Processing@{video\+Pre\+Processing}!Data@{Data}}
+\subsubsection{\texorpdfstring{video\+Pre\+Processing()}{videoPreProcessing()}}
+{\footnotesize\ttfamily cv\+::\+Mat Data\+::video\+Pre\+Processing (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{frame }\end{DoxyParamCaption})}
+
+
+
+To resize and filter input video frames to operate on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & \+: Frame to be preprocessed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cv\+::\+Mat 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Data_8hpp}{Data.\+hpp}\item 
+app/\hyperlink{Data_8cpp}{Data.\+cpp}\end{DoxyCompactItemize}

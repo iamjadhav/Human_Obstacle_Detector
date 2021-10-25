@@ -1,4 +1,28 @@
 /**
+ * MIT License
+
+ * Copyright (c) 2021 Abhishek Nalawade, Aditya Jadhav
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ **/
+
+/**
  * @file Data.cpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
@@ -25,23 +49,38 @@ Data::Data() {}
 int Data::getCamera(int mode) {
   frame.release();
   std::string frameInput = "camera";
+
+  // sets the default camera for reading frames
   cv::VideoCapture cap(mode);
     if (cap.isOpened() == false) {
       std::cout << "Camera cannot be opened! " << std::endl;
       return 3;
     } else {
         while (true) {
+            // variable to store the camera frame X, Y, Z
             std::vector<std::vector<double>> coor;
+
+            // variable to store the robot frame X, Y, Z
             std::vector<Eigen::Vector4d> finalLocations;
+
+            // variable to store box heights
             std::vector<double> heights;
+
+            // variable to store the estimated depths of humans
             std::vector<double> depths;
             cap >> frame;
             if (frame.empty())
               break;
+
+            // preprocessing the frame
             resizedFrame = preProcessing(frame);
+
+            // detects the humans in the frame
             human_detector.detectHuman(resizedFrame);
-            heights = human_detector.putBox(resizedFrame);
-            depths = dist.findDepth(heights);
+            human_detector.putBox(resizedFrame);
+            depths = dist.findDepth(human_detector.heights);
+
+            // gets the camera frame x, y, z coordinates
             coor = dist.getXY(depths, human_detector.box_coordinates);
             finalLocations = dist.camToRobotTransform(coor);
             dist.displayLocation(finalLocations, frameInput);
@@ -73,17 +112,30 @@ double Data::loadVideo(std::string filePath) {
       return 3;
     } else {
         while (true) {
+          // variable to store the camera frame X, Y, Z
           std::vector<std::vector<double>> coor;
+
+          // variable to store the robot frame X, Y, Z
           std::vector<Eigen::Vector4d> finalLocations;
+
+          // variable to store box heights
           std::vector<double> heights;
+
+          // variable to store the estimated depths of humans
           std::vector<double> depths;
           cap >> frame;
           if (frame.empty())
             break;
+
+          // preprocessing the frame
           resizedFrame = videoPreProcessing(frame);
+
+          // detects the humans in the frame
           human_detector.detectHuman(resizedFrame);
-          heights = human_detector.putBox(resizedFrame);
-          depths = dist.findDepth(heights);
+          human_detector.putBox(resizedFrame);
+          depths = dist.findDepth(human_detector.heights);
+
+          // gets the camera frame x, y, z coordinates
           coor = dist.getXY(depths, human_detector.box_coordinates);
           finalLocations = dist.camToRobotTransform(coor);
           dist.displayLocation(finalLocations, frameInput);
@@ -108,6 +160,8 @@ double Data::loadVideo(std::string filePath) {
  */
 cv::Mat Data::preProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
+
+  // resizing the frame
   cv::resize(frame_copy, resizedFrame, cv::Size(frame_copy.cols*2,
               frame_copy.rows*2));
   return resizedFrame;
@@ -120,6 +174,8 @@ cv::Mat Data::preProcessing(const cv::Mat &frame) {
  */
 cv::Mat Data::videoPreProcessing(const cv::Mat &frame) {
   frame_copy = frame.clone();
+
+  // resizing the frame
   cv::resize(frame_copy, resizedFrame, cv::Size((int)frame_copy.cols/2,
             (int)frame_copy.rows/2));
   return resizedFrame;

@@ -77,15 +77,27 @@ SOFTWARE.
 
 ## Demos and Overviews
 
-Please find the Phase-1 Overview here:
+Phase-1 Demo:
+
 - [Phase-1](https://youtu.be/lwNjuT5e-FM)
 
-- [Phase-2] ![ezgif com-gif-maker](https://user-images.githubusercontent.com/35925489/138687478-1459cc24-4aad-42cc-9227-612790c5da71.gif)
+Phase-2 Output Demo:
+
+- [Phase-2](https://www.youtube.com/watch?v=CXsixNbqTj8)
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/35925489/138687478-1459cc24-4aad-42cc-9227-612790c5da71.gif)
+
+## Set of Assumptions 
+
+- Humans are assumed to be in upright position.
+- The average human height is assumed to be 175 cms (1.75 meters).
 
 ## Known Issues/Bugs 
 
 - Human Detection is not highly efficient; Unnecessary bounding boxes are drawn for detections other than humans.
 - Humans in an abnormal pose are not being detected.
+- Lighting Conditions need to be favourable for good detection.
+- Humans in upright positions are detected.
 
 ## Dependencies
 

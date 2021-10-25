@@ -1,4 +1,28 @@
 /**
+ * MIT License
+
+ * Copyright (c) 2021 Abhishek Nalawade, Aditya Jadhav
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ **/
+
+/**
  * @file DistanceTest.cpp
  * @author Aditya Jadhav (amjadhav@umd.edu)
  * @author Abhishek Nalawade (abhi1793@umd.edu)
@@ -30,7 +54,7 @@ TEST(TransformTest, check_Robot_Transform) {
 }
 
 /**
- * @brief Construct a new TEST object
+ * @brief TEST to verify X and Y coordinates
  */
 TEST(xyCoordinatesTest, getXY) {
   Distance testDist;
@@ -44,7 +68,7 @@ TEST(xyCoordinatesTest, getXY) {
 }
 
 /**
- * @brief Construct a new TEST object
+ * @brief TEST to verify depth of humans
  */
 TEST(DepthTest, findDepth) {
   Distance testDist;
@@ -53,7 +77,7 @@ TEST(DepthTest, findDepth) {
 }
 
 /**
- * @brief Construct a new TEST object
+ * @brief TEST verifying location placement on the screen
  */
 TEST(DisplayLocation, checking_location) {
   Eigen::Vector4d loc(1.6, 0.8, 3.6, 1);
