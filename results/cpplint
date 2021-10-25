@@ -1,0 +1,27 @@
+
+
+$ cpplint $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/") $( find . -name *.hpp | grep -vE -e "^./build/" -e "^./vendor/")
+./app/Data.cpp:131:  Using C-style cast.  Use static_cast<int>(...) instead  [readability/casting] [4]
+./app/Data.cpp:132:  Using C-style cast.  Use static_cast<int>(...) instead  [readability/casting] [4]
+Done processing ./app/Data.cpp
+Done processing ./app/Detect.cpp
+Done processing ./app/Distance.cpp
+Done processing ./app/main.cpp
+Done processing ./include/Data.hpp
+./include/Detect.hpp:29:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &input_frame  [runtime/references] [2]
+./include/Detect.hpp:30:  Is this a non-const reference? If so, make const or use a pointer: cv::Mat &input_frame  [runtime/references] [2]
+./include/Detect.hpp:31:  Is this a non-const reference? If so, make const or use a pointer: std::vector<double> &weights  [runtime/references] [2]
+Done processing ./include/Detect.hpp
+./include/Distance.hpp:30:  Is this a non-const reference? If so, make const or use a pointer: std::vector<std::vector<double>> &camXYZ  [runtime/references] [2]
+./include/Distance.hpp:31:  Is this a non-const reference? If so, make const or use a pointer: std::vector<double> &boxHeight  [runtime/references] [2]
+./include/Distance.hpp:33:  Is this a non-const reference? If so, make const or use a pointer: std::vector<double> &depth  [runtime/references] [2]
+./include/Distance.hpp:33:  Is this a non-const reference? If so, make const or use a pointer: std::vector<cv::Rect> &r  [runtime/references] [2]
+./include/Distance.hpp:34:  Is this a non-const reference? If so, make const or use a pointer: std::vector<Eigen::Vector4d> &locations  [runtime/references] [2]
+./include/Distance.hpp:35:  Is this a non-const reference? If so, make const or use a pointer: std::string &frameInput  [runtime/references] [2]
+Done processing ./include/Distance.hpp
+Done processing ./test/DataTest.cpp
+Done processing ./test/DetectTest.cpp
+Done processing ./test/DistanceTest.cpp
+Done processing ./test/main.cpp
+Total errors found: 11
+
