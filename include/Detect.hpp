@@ -48,11 +48,10 @@
 class Detect {
  public:
   Detect();
-  std::vector<double> heights;
-  std::vector<cv::Rect> box_coordinates;
   cv::HOGDescriptor HOG;
-  std::vector<double> detectHuman(cv::Mat &input_frame);
-  int putBox(cv::Mat &input_frame);
+  std::vector<cv::Rect> detectHuman(cv::Mat &input_frame);
+  std::vector<double> putBox(cv::Mat &input_frame,
+                              std::vector<cv::Rect> &box_coordinates);
   ~Detect();
 
  private:

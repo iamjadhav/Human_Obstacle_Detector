@@ -46,6 +46,7 @@ int main() {
 
     // creatung data class object
     Data data;
+    std::string test = "OFF";
 
     // takes input from user for which mode to run
     std::cout << "Do you want to detect humans using camera?(y/n)"
@@ -54,7 +55,7 @@ int main() {
 
     // triggers camera mode
     if (input == 'y' || input == 'Y') {
-      data.getCamera(0);
+      data.getCamera(0, test);
     } else if (input == 'n' || input == 'N') {    // triggers vidoe mode
       std::cout << "Do you want to detect humans in a pre-recorded"
        << " video?(y/n)" << std::endl;
@@ -63,7 +64,7 @@ int main() {
         std::cout << "Enter the file path: \n";
         std::string path;
         std::cin >> path;
-        data.loadVideo(path);
+        data.loadVideo(path, test);
       } else {
         std::cout << "Sorry to see you go! \n";
       }

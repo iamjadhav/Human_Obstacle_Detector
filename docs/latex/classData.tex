@@ -25,9 +25,9 @@ Collaboration diagram for Data\+:
 \mbox{\Hypertarget{classData_af11f741cb7f587e2e495452a8905a22a}\label{classData_af11f741cb7f587e2e495452a8905a22a}} 
 \hyperlink{classData_af11f741cb7f587e2e495452a8905a22a}{Data} ()
 \begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classData}{Data}\+:\+: \hyperlink{classData}{Data} object. \end{DoxyCompactList}\item 
-int \hyperlink{classData_a511184f11597e720b0bf96b9b4f89a0b}{get\+Camera} (int mode)
+double \hyperlink{classData_ab632c5dd4acbd86dba0921210aa7139d}{get\+Camera} (int mode, const std\+::string \&test)
 \begin{DoxyCompactList}\small\item\em To take the camera frames as input. \end{DoxyCompactList}\item 
-double \hyperlink{classData_a9875eec4b1ee3fc18512e5721513d34e}{load\+Video} (std\+::string file\+Path)
+double \hyperlink{classData_a0a8569daf0e938c6793c3241fc1f9023}{load\+Video} (std\+::string file\+Path, const std\+::string \&test)
 \begin{DoxyCompactList}\small\item\em To take frames from a video file as input frames. \end{DoxyCompactList}\item 
 cv\+::\+Mat \hyperlink{classData_a8791dd62b1f57b4e4f2039e934ec7fdf}{pre\+Processing} (const cv\+::\+Mat \&frame)
 \begin{DoxyCompactList}\small\item\em To resize and filter input images to operate on. \end{DoxyCompactList}\item 
@@ -54,11 +54,11 @@ cv\+::\+Mat {\bfseries frame}
 \hyperlink{classData}{Data} class includes methods to get the input data and a method to put bounging boxes around the detected humans. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classData_a511184f11597e720b0bf96b9b4f89a0b}\label{classData_a511184f11597e720b0bf96b9b4f89a0b}} 
+\mbox{\Hypertarget{classData_ab632c5dd4acbd86dba0921210aa7139d}\label{classData_ab632c5dd4acbd86dba0921210aa7139d}} 
 \index{Data@{Data}!get\+Camera@{get\+Camera}}
 \index{get\+Camera@{get\+Camera}!Data@{Data}}
 \subsubsection{\texorpdfstring{get\+Camera()}{getCamera()}}
-{\footnotesize\ttfamily int Data\+::get\+Camera (\begin{DoxyParamCaption}\item[{int}]{mode }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double Data\+::get\+Camera (\begin{DoxyParamCaption}\item[{int}]{mode,  }\item[{const std\+::string \&}]{test }\end{DoxyParamCaption})}
 
 
 
@@ -72,11 +72,11 @@ To take the camera frames as input.
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classData_a9875eec4b1ee3fc18512e5721513d34e}\label{classData_a9875eec4b1ee3fc18512e5721513d34e}} 
+\mbox{\Hypertarget{classData_a0a8569daf0e938c6793c3241fc1f9023}\label{classData_a0a8569daf0e938c6793c3241fc1f9023}} 
 \index{Data@{Data}!load\+Video@{load\+Video}}
 \index{load\+Video@{load\+Video}!Data@{Data}}
 \subsubsection{\texorpdfstring{load\+Video()}{loadVideo()}}
-{\footnotesize\ttfamily double Data\+::load\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double Data\+::load\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Path,  }\item[{const std\+::string \&}]{test }\end{DoxyParamCaption})}
 
 
 

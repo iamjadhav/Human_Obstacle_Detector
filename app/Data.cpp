@@ -46,16 +46,17 @@ Data::Data() {}
  * @param mode : Camera mode to view the camera or not
  * @return int
  */
-int Data::getCamera(int mode) {
+double Data::getCamera(int mode, const std::string &test) {
   frame.release();
+  double locx = 1;
   std::string frameInput = "camera";
 
   // sets the default camera for reading frames
   cv::VideoCapture cap(mode);
-    if (cap.isOpened() == false) {
+    if (cap.isOpened() == false && test == "OFF") {
       std::cout << "Camera cannot be opened! " << std::endl;
       return 3;
-    } else {
+    } else if (test == "ON" || test == "OFF") {
         while (true) {
             // variable to store the camera frame X, Y, Z
             std::vector<std::vector<double>> coor;
@@ -68,7 +69,13 @@ int Data::getCamera(int mode) {
 
             // variable to store the estimated depths of humans
             std::vector<double> depths;
-            cap >> frame;
+
+            std::vector<cv::Rect> box_coordinates;
+            if (test == "OFF") {
+              cap >> frame;
+              } else if (test == "ON") {
+              frame = cv::imread("../testdata/box_test.jpg");
+              }
             if (frame.empty())
               break;
 
@@ -76,25 +83,38 @@ int Data::getCamera(int mode) {
             resizedFrame = preProcessing(frame);
 
             // detects the humans in the frame
-            human_detector.detectHuman(resizedFrame);
-            human_detector.putBox(resizedFrame);
-            depths = dist.findDepth(human_detector.heights);
+            box_coordinates = human_detector.detectHuman(resizedFrame);
+            heights = human_detector.putBox(resizedFrame, box_coordinates);
+            depths = dist.findDepth(heights);
 
             // gets the camera frame x, y, z coordinates
-            coor = dist.getXY(depths, human_detector.box_coordinates);
+            coor = dist.getXY(depths, box_coordinates);
+
+            // if no humans detected continue
+            if (coor.size() < 1 && test == "OFF") {
+              cv::imshow("Detected Humans", resizedFrame);
+              cv::waitKey(1);
+              continue;
+            }
             finalLocations = dist.camToRobotTransform(coor);
             dist.displayLocation(finalLocations, frameInput);
-            cv::imshow("Detected Humans", resizedFrame);
-            cv::waitKey(1);
-            char q = static_cast<char> (cv::waitKey(25));
-            if (q == 27) {
+            if (test == "OFF") {
+              cv::imshow("Detected Humans", resizedFrame);
+              cv::waitKey(1);
+              char q = static_cast<char> (cv::waitKey(25));
+              locx = finalLocations[0][0]/1000;
+              if (q == 27) {
+                break;
+              }
+          } else {
+              locx = finalLocations[0][0]/1000;
               break;
-            }
+          }
         }
       cap.release();
       cv::destroyAllWindows();
     }
-    return 1;
+    return locx;
 }
 
 /**
@@ -102,15 +122,19 @@ int Data::getCamera(int mode) {
  * @param filePath Path to the video file
  * @return double
  */
-double Data::loadVideo(std::string filePath) {
+double Data::loadVideo(std::string filePath, const std::string &test) {
   frame.release();
-  double locx;
+  double locx = 1;
+  cv::VideoCapture cap(2);
   std::string frameInput = "video";
-  cv::VideoCapture cap(filePath);
-    if (cap.isOpened() == false) {
+  if (test == "OFF") {
+    cv::VideoCapture cap1(filePath);
+    cap = cap1;
+  }
+    if (cap.isOpened() == false && test == "OFF") {
       std::cout << "Video File cannot be opened! " << std::endl;
       return 3;
-    } else {
+    } else if (test == "ON" || test == "OFF") {
         while (true) {
           // variable to store the camera frame X, Y, Z
           std::vector<std::vector<double>> coor;
@@ -123,7 +147,13 @@ double Data::loadVideo(std::string filePath) {
 
           // variable to store the estimated depths of humans
           std::vector<double> depths;
-          cap >> frame;
+
+          std::vector<cv::Rect> box_coordinates;
+          if (test == "OFF") {
+            cap >> frame;
+            } else if (test == "ON") {
+            frame = cv::imread(filePath);
+            }
           if (frame.empty())
             break;
 
@@ -131,20 +161,32 @@ double Data::loadVideo(std::string filePath) {
           resizedFrame = videoPreProcessing(frame);
 
           // detects the humans in the frame
-          human_detector.detectHuman(resizedFrame);
-          human_detector.putBox(resizedFrame);
-          depths = dist.findDepth(human_detector.heights);
+          box_coordinates = human_detector.detectHuman(resizedFrame);
+          heights = human_detector.putBox(resizedFrame, box_coordinates);
+          depths = dist.findDepth(heights);
 
           // gets the camera frame x, y, z coordinates
-          coor = dist.getXY(depths, human_detector.box_coordinates);
+          coor = dist.getXY(depths, box_coordinates);
+
+          // if no humans detected continue
+          if (coor.size() < 1 && test == "OFF") {
+            cv::imshow("Detected Humans", resizedFrame);
+            cv::waitKey(10);
+            continue;
+          }
           finalLocations = dist.camToRobotTransform(coor);
           dist.displayLocation(finalLocations, frameInput);
-          cv::imshow("Detected Humans", resizedFrame);
-          cv::waitKey(1);
-          char q = static_cast<char> (cv::waitKey(25));
-          locx = finalLocations[0][0]/1000;
-          if (q == 27) {
-            break;
+          if (test == "OFF") {
+            cv::imshow("Detected Humans", resizedFrame);
+            cv::waitKey(1);
+            char q = static_cast<char> (cv::waitKey(25));
+            locx = finalLocations[0][0]/1000;
+            if (q == 27) {
+              break;
+            }
+          } else {      // test case
+              locx = finalLocations[0][0]/1000;
+              break;
           }
         }
       cap.release();

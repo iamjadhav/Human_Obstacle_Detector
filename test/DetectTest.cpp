@@ -55,8 +55,10 @@ TEST(Detect_test, checking_detected_human) {
 TEST(Bounding_box_test, checking_height) {
   Detect box;
   cv::Mat frame;
+  std::vector<cv::Rect> boxes;
+  std::vector<double> heights;
   frame = cv::imread("../testdata/box_test.jpg");
-  box.detectHuman(frame);
-  box.putBox(frame);
-  EXPECT_EQ((box.heights)[0], 483);
+  boxes = box.detectHuman(frame);
+  heights = box.putBox(frame, boxes);
+  EXPECT_EQ(heights[0], 483);
 }

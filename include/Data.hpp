@@ -55,8 +55,8 @@ class Data {
   Distance dist;
   Detect human_detector;
   cv::Mat frame;
-  int getCamera(int mode);
-  double loadVideo(std::string filePath);
+  double getCamera(int mode, const std::string &test);
+  double loadVideo(std::string filePath, const std::string &test);
   cv::Mat preProcessing(const cv::Mat &frame);
   cv::Mat videoPreProcessing(const cv::Mat &frame);
   ~Data();

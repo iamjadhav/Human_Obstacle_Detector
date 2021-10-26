@@ -47,16 +47,18 @@ Detect::Detect() {}
  * @param input_frame :Frame to detect humans
  * @return std::vector<double>
  */
-std::vector<double> Detect::detectHuman(cv::Mat &input_frame) {
+std::vector<cv::Rect> Detect::detectHuman(cv::Mat &input_frame) {
   // sets default detector for detecting humans
   HOG.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
 
   // vector for storing the weights
   std::vector<double> weights;
 
+  std::vector<cv::Rect> box_coordinates;
+
   // detects the humans in the frame
   HOG.detectMultiScale(input_frame, box_coordinates, weights);
-  return weights;
+  return box_coordinates;
 }
 
 /**
@@ -64,9 +66,10 @@ std::vector<double> Detect::detectHuman(cv::Mat &input_frame) {
  * @param input_frame : Frame returned from detectHuman method
  * @return std::vector<double>
  */
-int Detect::putBox(cv::Mat &input_frame) {
+std::vector<double> Detect::putBox(cv::Mat &input_frame,
+                                    std::vector<cv::Rect> &box_coordinates) {
   // stores the heights of the boxes detected
-  //std::vector<double> heights;
+  std::vector<double> heights;
 
   // iterates throught the box coordinates to draw boxes on the frame
   for ( size_t i = 0; i < box_coordinates.size(); i++ ) {
@@ -80,7 +83,7 @@ int Detect::putBox(cv::Mat &input_frame) {
                 cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255) );
     heights.push_back(r.height);
   }
-  return 1;
+  return heights;
 }
 
 /**

@@ -96,6 +96,7 @@ Phase-2 Final Overview:
 - Humans are assumed to be in upright position.
 - The average human height is assumed to be 175 cms (1.75 meters).
 - Assumed Pin Hole camera model and Perspective Transform.
+- Humans need to be present in the frame before the detection starts for better results.
 
 ## Known Issues/Bugs 
 
