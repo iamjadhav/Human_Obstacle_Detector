@@ -2,6 +2,7 @@
 [![Build Status](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector.svg?branch=main)](https://app.travis-ci.com/iamjadhav/Human_Obstacle_Detector)
 [![Coverage Status](https://coveralls.io/repos/github/iamjadhav/Human_Obstacle_Detector/badge.svg?branch=main)](https://coveralls.io/github/iamjadhav/Human_Obstacle_Detector?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
 ---
 
 ## Contributors
